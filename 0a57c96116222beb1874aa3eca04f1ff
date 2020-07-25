@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
+	<meta name="author" content="Coderthemes">
+
+	<link rel="shortcut icon" href="assets/images/favicon_1.ico">
+
+	<title>Reading Test</title>
+
+	<link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/core.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/components.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/icons.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/pages.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/responsive.css" rel="stylesheet" type="text/css" />
+
+	<!-- Ladda buttons css -->
+	<link href="assets/plugins/ladda-buttons/css/ladda-themeless.min.css" rel="stylesheet" type="text/css" />
+
+	<script src="assets/js/modernizr.min.js"></script>
+</head>
+<html>
+
+<body>
+	<div class="row">
+		<div class="col-lg-8">
+			<ul class="nav nav-tabs tabs">
+				<li class="active tab">
+					<a href="#article1" id="articleTab1" data-toggle="tab" aria-expanded="false">
+						<span class="hidden-xs">droidrooter Description</span>
+					</a>
+				</li>
+			</ul>
+			<div class="tab-content">
+				<div class="tab-pane active" id="article1" style="height: 80px;overflow: scroll;">
+				</div>
+			</div>
+		</div>
+
+		<div class="col-lg-4">
+			<ul class="nav nav-tabs tabs tabs-top">
+				<li id="answerTabStatus" class="active tab">
+					<a id="answerTab" href="#answer1" data-toggle="tab">
+						<span class="visible-xs"><i class="fa fa-home"></i></span>
+						<span class="hidden-xs">Answer Sheet for 0a57c96116222beb1874aa3eca04f1ff.data</span>
+					</a>
+				</li>
+				<div style="text-align: right; margin-top: 1%; margin-right: 1%">
+				  <div style="display: inline"><button id="submitBtn"
+					 data-style="expand-left" style="display: none;" onclick="static_num()"><span class="ladda-label">Submit</span>
+					</button></div>
+          <p><input type="checkbox" name="category" value=""/>RequestedPermissionList_android.permission.BATTERY_STATS</p>   
+          <p><input type="checkbox" name="category" value=""/>RequestedPermissionList_android.permission.CAMERA</p>
+          <p><input type="checkbox" name="category" value=""/>RequestedPermissionList_android.permission.SYSTEM_ALERT_WINDOW</p>    
+          <p><input type="checkbox" name="category" value=""/>RequestedPermissionList_android.permission.KILL_BACKGROUND_PROCESSES</p>    
+          <p><input type="checkbox" name="category" value=""/>RequestedPermissionList_com.android.launcher.permission.WRITE_SETTINGS</p> 
+          <p><input type="checkbox" name="category" value=""/>RequestedPermissionList_android.permission.GET_TASKS</p> 
+          <p><input type="checkbox" name="category" value=""/>RequestedPermissionList_android.permission.ACCESS_WIFI_STATE</p> 
+          <p><input type="checkbox" name="category" value=""/>RequestedPermissionList_android.permission.WAKE_LOCK</p> 
+          <p><input type="checkbox" name="category" value=""/>RequestedPermissionList_android.permission.CHANGE_WIFI_STATE</p> 
+          <p><input type="checkbox" name="category" value=""/>RequestedPermissionList_android.permission.RECEIVE_SMS</p> 
+          <p><input type="checkbox" name="category" value=""/>RequestedPermissionList_android.permission.READ_CONTACTS</p> 
+          <p><input type="checkbox" name="category" value=""/>RequestedPermissionList_android.permission.CLEAR_APP_CACHE</p> 
+          <p><input type="checkbox" name="category" value=""/>RequestedPermissionList_android.permission.BLUETOOTH</p>
+          <p><input type="checkbox" name="category" value=""/>RequestedPermissionList_android.permission.RESTART_PACKAGES</p>
+          <p><input type="checkbox" name="category" value=""/>RequestedPermissionList_oicq.wlogin_sdk.permission.WloginProvider.WRITE</p>
+          <p><input type="checkbox" name="category" value=""/>RequestedPermissionList_android.permission.GET_ACCOUNTS</p>
+          <p><input type="checkbox" name="category" value=""/>RequestedPermissionList_com.qq.superuser.READ_PERMISSION</p>
+          <p><input type="checkbox" name="category" value=""/>SuspiciousApiList_Landroid/net/wifi/WifiManager.getWifiState</p>
+          <p><input type="checkbox" name="category" value=""/>SuspiciousApiList_Landroid/content/Context.getSystemService</p>
+          <p><input type="checkbox" name="category" value=""/>SuspiciousApiList_Lorg/apache/http/client/methods/HttpPost</p>
+          <p><input type="checkbox" name="category" value=""/>SuspiciousApiList_Landroid/telephony/TelephonyManager.getDeviceId</p>
+          <p><input type="checkbox" name="category" value=""/>SuspiciousApiList_Ljava/lang/Runtime;->exec</p>
+          <p><input type="checkbox" name="category" value=""/>SuspiciousApiList_system/bin/su</p>
+          <p><input type="checkbox" name="category" value=""/>SuspiciousApiList_Landroid/telephony/SmsManager.sendTextMessage</p>
+          <p><input type="checkbox" name="category" value=""/>SuspiciousApiList_Landroid/app/Activity.getSystemService</p>
+          <p><input type="checkbox" name="category" value=""/>SuspiciousApiList_Landroid/telephony/TelephonyManager.getSubscriberId</p>
+          <p><input type="checkbox" name="category" value=""/>SuspiciousApiList_Landroid/content/pm/PackageManager.getPackageInfo</p>
+          <p><input type="checkbox" name="category" value=""/>SuspiciousApiList_Ljava/io/IOException;->printStackTrace</p>
+          <p><input type="checkbox" name="category" value=""/>SuspiciousApiList_Landroid/net/wifi/WifiManager.setWifiEnabled</p>
+				</div>
+			</ul>
+		</div>
+	</div>
+
+</body>
+
+<!-- jQuery  -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+
+<!-- init buttn -->
+<script src="assets/plugins/ladda-buttons/js/spin.min.js"></script>
+<script src="assets/plugins/ladda-buttons/js/ladda.min.js"></script>
+<script src="assets/plugins/ladda-buttons/js/ladda.jquery.min.js"></script>
+<!-- init page -->
+<script src="popup.js"></script>
+
+<script>
+	$(document).ready(function () {
+		$("#article1").css("height", window.screen.availHeight * 0.78);
+		$("#answer1").css("height", window.screen.availHeight * 0.78);
+	});
+  
+  function static_num() 
+  {            
+    document.getElementById("btnOperate").onclick = function () {                
+        var arr = new Array();                
+        var items = document.getElementsByName("category");                 
+        for (i = 0; i < items.length; i++) {                    
+            if (items[i].checked) {                        
+                arr.push(items[i].value);                    
+            }                
+        }                 
+        alert("选择的个数为：" + arr.length);            
+    };        
+  }; 
+
+</script>
+
+</html>
