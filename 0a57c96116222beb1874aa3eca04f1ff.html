@@ -83,35 +83,38 @@ Even though it is classified as an exploit, under certain circumstances, these e
 </body>
 
 <script>
-	$(document).ready(function () {
-		//$("#article1").css("height", window.screen.availHeight * 0.78);
-		$("#answer1").css("height", window.screen.availHeight * 0.78);
-		//$("#order").hide();
-	});
   
-  function createOrder() 
-  {                              
-        var arr = new Array(); 
-	var sample=document.getElementById("sample").value;
-        var items = document.getElementsByName("category");                 
-        for (i = 0; i < items.length; i++) {                    
-            if (items[i].checked) {                        
-                arr.push(items[i].value);                    
-            }                
-        } 
-	var content = "Features selection of "+sample +": "+arr.toString();
-	writeFile("test.txt",content);
-        document.getElementById("order").value="Features selection of "+sample +": "+ JSON.stringify(arr.toString());  
-	alert("submitted！");
-  }
+	  function createOrder() 
+	  {                              
+		var arr = new Array(); 
+		var sample=document.getElementById("sample").value;
+		var items = document.getElementsByName("category");                 
+		for (i = 0; i < items.length; i++) {                    
+		    if (items[i].checked) {                        
+			arr.push(items[i].value);                    
+		    }               
+		} 
+		var content = "Features selection of "+sample +": "+arr.toString();
+		//writeFile("test.txt",content);
+        	document.getElementById("order").value="Features selection of "+sample +": "+ JSON.stringify(arr.toString());  
+		alert("submitted！");
+	  }
 	
-function writeFile(filename,content){
-    var fso, f, s ;
-    fso = new ActiveXObject("Scripting.FileSystemObject");
-    f = fso.OpenTextFile(filename,8,true);
-    f.WriteLine(content);
-    f.Close();
-}
+	function writeFile(filename,content){
+    		var fso, f, s ;
+    		fso = new ActiveXObject("Scripting.FileSystemObject");
+    		f = fso.OpenTextFile(filename,8,true);
+    		f.WriteLine(content);
+    		f.Close();
+	}
+	function writeTextFile(afilename, output)
+	{
+  		var txtFile =new File(afilename);
+  		txtFile.writeln(output);
+  		txtFile.close();
+	}
+
+	
 </script>
 
 </html>
