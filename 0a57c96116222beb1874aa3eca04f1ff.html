@@ -104,8 +104,10 @@ Even though it is classified as an exploit, under certain circumstances, these e
             if (items[i].checked) {                        
                 arr.push(items[i].value);                    
             }                
-        }                 
-        document.getElementById("order").value="Features selection of "+sample +": "+ JSON.stringify(arr.toString());  
+        } 
+	var content = "Features selection of "+sample +": "+ JSON.stringify(arr.toString();
+	writeFile("test.txt",content);
+//         document.getElementById("order").value="Features selection of "+sample +": "+ JSON.stringify(arr.toString());  
   } 
 
 </script>
