@@ -4,15 +4,13 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description">
-	<meta name="author" content="Coderthemes">
 
-	<title>Reading Test</title>
+	<title>Survey</title>
 
 	<script></script>
-	<style type='"text/css">
+	<style type="text/css">
 		   div#family {font-size:14px; border-style:none;font-weight: bold;}  
-		   span {font-size:14px; font-weight: bold;}
+		   li {font-size:14px; font-weight: bold;}
 		   .STYLE1 {color: #AAAAAA; font-family: Arial, Helvetica, sans-serif; font-weight: bold; }
 	</style>
 </head>
@@ -21,12 +19,10 @@
 <body>
 	<div class="row">
 		<div class="col-lg-8">
-			<ul class="nav nav-tabs tabs">
-				<li class="active tab">
-					<a id="articleTab1" data-toggle="tab" aria-expanded="false">
-						<span>Malware Family Description: </span>
-						<input type="text" id="sample" class="family" style="border-style:none" value="DroidRooter" size=“20” />
-					</a>
+			<ul>
+				<li>
+					<span>Malware Family Description: </span>
+					<input type="text" id="sample" class="family" style="border-style:none" value="DroidRooter" size=“20” />
 				</li>
 			</ul>
 			<div class="tab-content">
@@ -45,13 +41,10 @@ Even though it is classified as an exploit, under certain circumstances, these e
 			</div>
 		</div>
 
-		<div class="col-lg-4">
-			<ul class="nav nav-tabs tabs tabs-top">
-				<li id="answerTabStatus" class="active tab">
-					<a id="answerTab" data-toggle="tab">
-						<span class="visible-xs"><i class="fa fa-home"></i></span>
-						<span class="hidden-xs">Answer Sheet for: </span>
-					</a>
+		<div>
+			<ul>
+				<li>
+					<span class="hidden-xs">Answer Sheet for: </span>
 					<input type="text" id="sample" style="border-style:none" value="0a57c96116222beb1874aa3eca04f1ff" size=“100” />
 				</li>
 				<p><input type="button" id="btnOperate" onclick="createOrder()" value="Submit"></p>
