@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>Boxer</title>
+        <meta charset="utf-8">
+        <style type="text/css">
+
+    	</style>
+    </head>
+    <body>      
+          <p>
+            SUMMARY<br />
+Trojan:Android/GinMaster.A steals confidential information from the device and sends it to a remote website.<br />
+TECHNICAL DETAILS<br />
+Trojan:Android/GinMaster.A is a trojanized application which was first seen in the Android Market for (mainland) China by researchers from North Carolina State University. The exploit source code has been publicly available since April 2011.<br />
+It is the first malicious software to utilize a rooting exploit that targets Android 2.3.3 (Gingerbread) devices to escalate privileges on the system. Based on the author's own description of the exploit and examination of its binary, it may also work on Android 2.2 (Froyo) and 3.0 (Honeycomb) devices.<br />
+<br />
+ 
+Trojan:Android/GinMaster.A's own description.<br />
+However, in the particular sample analyzed, the trojan will only run the exploit if the device version is not greater than 2.3.3 (up to Gingerbread version only).<br />
+Trojan:Android/GinMaster.A's use of the exploit may allow it to install additional applications to the device without the user's consent.<br />
+Installation<br />
+The malicious application asks for the following permissions during installation:<br />
+ 
+ <br />
+Permissions requested by Trojan:Android/GinMaster.A<br />
+If the user agrees with the permission requests and proceeds with installation, the application will start up a malicious service in the background. The malicious service is designed in such a way that as long as the main process is running, it will not be terminated by the operating system in the event of a device memory resources shortage.<br />
+This is how it looks like on the device in the list of running services.<br />
+ <br />
+Trojan:Android/GinMaster.A starts a service in the background.<br />
+Activity<br />
+The malicious service (in effect, the trojan's payload) is triggered when one of the following conditions is met:<br />
+•	When the trojanized application is running<br />
+•	When the device finishes a boot<br />
+•	When a new package is installed on the device.<br />
+•	When a new package is removed from the device.<br />
+All these malicious activities occur invisibily in the background and are performed without notifying the user or seeking consent.<br />
+ 
+Some images from the trojanized application<br />
+After a few seconds, a popup message will appear that asks the user's confirmation to apply an update. If the user confirms, a new application update downloaded from the internet will be applied.<br />
+ 
+Popup dialogue<br />
+The user can choose not to confirm the update and just press the phone's back button. The trojan however still proceeds to silently download the application package and save it in the device's SD card, all without the user's consent.
+ 
+
+
+          </p>	
+    </body>
+</html>
