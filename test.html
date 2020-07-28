@@ -1,9 +1,19 @@
 <html>
-    <head>
-        <title>the test text</title>
-        <meta charset="GBK">
-    </head>
-    <body>
-        <li>hello</li>
-    </body>
+    <head>
+        <title>the test text</title>
+        <meta charset="GBK">
+    </head>
+    <body>
+        <li>hello</li>
+		<li>
+			<div id="content3"></div>
+		</li>
+    </body>
+	<script>
+
+$(function(){
+$("#content3").load('test.txt');
+});
+
+</script>
 </html>
