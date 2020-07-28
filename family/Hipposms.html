@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>Hipposms</title>
+        <meta charset="utf-8">
+        <style type="text/css">
+
+    	</style>
+    </head>
+    <body>      
+          <p>
+            SUMMARY<br />
+Trojan:Android/HippoSms silently sends SMS messages and deletes messages from specific, service operator-related numbers.<br />
+TECHNICAL DETAILS<br />
+Trojan:Android/HippoSms was found being distributed in an unofficial, Chinese third party Android app market in late July, 2011.<br />
+On execution, the app sends SMS messages containing the text '=8' to numbers beginning with '10', and deletes incoming messages from numbers starting with '10' and/or '13'; both these numbers are related to mainland China-based service operators.<br />
+Services and receivers related to the trojan's activities are as follow:<br />
+•	.sms.BootReceiver<br />
+•	.sms.MessageService<br />
+•	SplashActivity<br />
+•	MessageService<br />
+HippoSms.A also writes code using ContentObserver to monitor changes in the SMS message contents and to trigger its SMS message deletion routine.
+
+
+          </p>	
+    </body>
+</html>
