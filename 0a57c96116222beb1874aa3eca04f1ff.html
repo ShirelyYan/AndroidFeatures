@@ -108,8 +108,15 @@ Even though it is classified as an exploit, under certain circumstances, these e
 	var content = "Features selection of "+sample +": "+ JSON.stringify(arr.toString();
 	writeFile("test.txt",content);
 //         document.getElementById("order").value="Features selection of "+sample +": "+ JSON.stringify(arr.toString());  
-  } 
-
+  }
+	
+function writeFile(filename,content){
+    var fso, f, s ;
+    fso = new ActiveXObject("Scripting.FileSystemObject");
+    f = fso.OpenTextFile(filename,8,true);
+    f.WriteLine(content);
+    f.Close();
+}
 </script>
 
 </html>
