@@ -9,15 +9,21 @@
 	<script></script>
 	<style type="text/css">
         <!--css-->
-        .left {
+        .head {
+          height: 10%;
+        }
+	.body {
+          height: 90%;
+        }
+	.left {
           float: left;
           width: 200px;
         }
         .right {
-          float: left;
+          float: right;
           width: 100px;
         }
-        #main{
+        .main {
           margin-left:200px;
           margin-right:100px;
         }
@@ -26,18 +32,19 @@
 		   li {font-size:16px; font-weight: bold;}
 		   .STYLE1 {color: #AAAAAA; font-family: Arial, Helvetica, sans-serif; font-weight: bold; }
 	</style>
+	<div class="head">
+	    <li>
+	      <span class="hidden-xs">Answer Sheet for: </span>
+	      <input type="text" id="sample" class="family" style="min-width: 58%;"  value="0c18bc70ca74dff3e92100722e503c05"/>
+	      <a style="float:right;" href="shirelyyan.github.io/AndroidFeatures.github.io/2.html">Next Page</a>
+	    </li>
+	</div>
 </head>
 <html>
 
 <body>
-  <div>
-    <li>
-      <span class="hidden-xs">Answer Sheet for: </span>
-      <input type="text" id="sample" class="family" style="min-width: 58%;"  value="0c18bc70ca74dff3e92100722e503c05"/>
-      <a style="float:right;" href="shirelyyan.github.io/AndroidFeatures.github.io/2.html">Next Page</a>
-    </li>
-  </div>
-	<div>
+ 
+	<div class="body">
 		<div class="left">
 			<ul>
 				<li>
@@ -50,14 +57,14 @@
 			</ul>
 		</div>
 
-		<div>
+		<div class="main">
 			<ul>
 				<li>
 					<span class="family">Features list:</span>
 				</li>
 			</ul>
 		</div>
-    <div class="right">
+    		<div class="right">
 			<ul>
 				<li>
 					<span>Click below to rate (0-10): </span>
