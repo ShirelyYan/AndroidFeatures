@@ -5,28 +5,23 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<title>Survey</title>
-
-	<script></script>
 	<style type="text/css">
-        <!--css-->
-        .head {
-          height: 10%;
-        }
-	.body {
-          height: 90%;
-        }
-	.left {
-          float: left;
-          width: 350px;
-        }
-        .right {
-          float: right;
-          width: 200px;
-        }
-        .main {
-          margin-left:200px;
-          margin-right:100px;
-        }
+		<!--css-->
+		.head {
+		  height: 10%;
+		}
+		.body {
+		  height: 90%;
+		}
+		.left {
+		  float: left;
+		  width: 350px;
+		}
+		.right {
+		  float: right;
+		  width: 200px;
+		}
+		
 		   input#sample {font-size:16px; border-style:none;font-weight: bold;}  
 		   .family {font-size:16px; border-style:none;font-weight: bold;}     
 		   li {font-size:16px; font-weight: bold;}
@@ -62,32 +57,30 @@
 				<li>
 					<span class="family">Features list:</span>
 				</li>
+				<p><iframe src="family/Jifake.html" style="height:85%;" name=iframe1></iframe></p>
 			</ul>
 		</div>
     		<div class="right">
 			<ul>
-				<li>
-					<p><input type="button" id="btnOperate" onclick="radio_submit()" value="Submit"></p>
-				</li>
-					<span>Click below to rate (0-10): </span>
-          <span>0:Not at all likely;  10: Extremely likely </span>
-					<form method="get"> 
-            <br />
-            <label><input name="rate" type="radio" value="" />0 </label> <br />
-            <label><input name="rate" type="radio" value="" />1 </label> <br />
-            <label><input name="rate" type="radio" value="" />2 </label> <br />
-            <label><input name="rate" type="radio" value="" />3 </label> <br />
-            <label><input name="rate" type="radio" value="" />4 </label> <br />
-            <label><input name="rate" type="radio" value="" />5 </label> <br />
-            <label><input name="rate" type="radio" value="" />6 </label> <br />
-            <label><input name="rate" type="radio" value="" />7 </label> <br />
-            <label><input name="rate" type="radio" value="" />8 </label> <br />
-            <label><input name="rate" type="radio" value="" />9 </label> <br />
-            <label><input name="rate" type="radio" value="" />10 </label> <br />
-          </form>
-          
 				
+				<p><input type="button" id="btnOperate" onclick="radio_submit()" value="Submit"></p>
 
+				<span>Click below to rate (0-10): </span>
+				<span>0:Not at all likely;  10: Extremely likely </span>
+				<form method="get"> 
+				    <br />
+				    <label><input name="rate" type="radio" value="" />0 </label> <br />
+				    <label><input name="rate" type="radio" value="" />1 </label> <br />
+				    <label><input name="rate" type="radio" value="" />2 </label> <br />
+				    <label><input name="rate" type="radio" value="" />3 </label> <br />
+				    <label><input name="rate" type="radio" value="" />4 </label> <br />
+				    <label><input name="rate" type="radio" value="" />5 </label> <br />
+				    <label><input name="rate" type="radio" value="" />6 </label> <br />
+				    <label><input name="rate" type="radio" value="" />7 </label> <br />
+				    <label><input name="rate" type="radio" value="" />8 </label> <br />
+				    <label><input name="rate" type="radio" value="" />9 </label> <br />
+				    <label><input name="rate" type="radio" value="" />10 </label> <br />
+				</form>
 			</ul>
 		</div>
 	</div>
