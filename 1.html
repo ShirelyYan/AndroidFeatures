@@ -46,7 +46,7 @@
 					<input type="text" class="family" value="Jifake"/>
 				</li>
 
-				<p><iframe src="family/Jifake.html" style="height:85%;" name=iframe1></iframe></p>
+				<p><iframe src="family/Jifake.html" style="height:85%;" id=iframe1></iframe></p>
         			<p style="font-style:oblique;">Source: https://www.f-secure.com/</p>
 			</ul>
 		</div>
@@ -56,7 +56,7 @@
 				<li>
 					<span class="family">Features list:</span>
 				</li>
-				<p><iframe src="family/Jifake.html" style="height:85%;" name=iframe1></iframe></p>
+				<p><iframe src="family/Jifake.html" style="height:85%;" name=iframe2></iframe></p>
 			</ul>
 		</div>
     		<div class="right">
@@ -86,20 +86,16 @@
 
 </body>
 
-<script>    
-    //savechecked
-	  function radio_submit() 
-	  {                              
-      var arr = new Array(); 
-      var sample=document.getElementById("sample").value;
-      var items = document.getElementsByName("category");                 
-      var score = $('input[name="rate"]:checked').val();
-      var content = sample +", "+score.toString();
-      alert("submitted！");
-      var filename=sample+'.txt';
-      download(content, filename, 'text/plain');
-	  }
-    
+<script language="javascript">    
+
+    	function setIframeHeight(iframe) {
+		if (iframe) {
+			var iframeWin = iframe.contentWindow || iframe.contentDocument.parentWindow;
+			if (iframeWin.document.body) {
+				iframe.height = iframeWin.document.documentElement.scrollHeight || iframeWin.document.body.scrollHeight;
+			}
+		}
+	};
     
 	
     //start of download
@@ -148,5 +144,21 @@
     //end of download
 
 	
+	window.onload = function () {
+		setIframeHeight(document.getElementById('iframe1'));
+	}
+	
+	//savechecked
+	function radio_submit() 
+	{                              
+		var arr = new Array(); 
+		var sample=document.getElementById("sample").value;
+		var items = document.getElementsByName("category");                 
+		var score = $('input[name="rate"]:checked').val();
+		var content = sample +", "+score.toString();
+		alert("submitted！");
+		var filename=sample+'.txt';
+		download(content, filename, 'text/plain');
+	}
 </script>
 </html>
