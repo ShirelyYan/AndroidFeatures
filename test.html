@@ -30,6 +30,7 @@
 				<li>					
 					<input type="text" class="family" value="Jifake" size=“20” />
 					<p><iframe src="test.txt" style="height:88%;" id=iframe1></iframe></p>
+					<div id="aa"></div>
 				</li>
 			</ul>
 		</div>
@@ -55,7 +56,18 @@
 	};
 
 	window.onload = function () {
-	setIframeHeight(document.getElementById('iframe1'));
+		setIframeHeight(document.getElementById('iframe1'));
+
+		var fso, ts, s ; 
+		var ForReading = 1; 
+
+		fso = new ActiveXObject("Scripting.FileSystemObject"); 
+		ts = fso.OpenTextFile("samples/04ba838770b4be04e61d387b7caef1c7.data", ForReading); 
+		s = ts.ReadLine(); 
+		document.getElementById("aa").innerHTML=s; 
 	};
+	
+	
+	
 	</script>
 </html>
