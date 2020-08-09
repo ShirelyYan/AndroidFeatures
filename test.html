@@ -29,7 +29,7 @@
 			<ul>
 				<li>					
 					<input type="text" class="family" value="Jifake" size=“20” />
-					<p><iframe src="test.txt" style="height:88%;" name=iframe1></iframe></p>
+					<p><iframe src="test.txt" style="height:88%;" id=iframe1></iframe></p>
 				</li>
 			</ul>
 		</div>
@@ -38,7 +38,7 @@
 				<li>
 					<span class="family">Features list:</span>
 				</li>
-				<p><iframe src="samples/04ba838770b4be04e61d387b7caef1c7.data" style="height:88%;" name=iframe1></iframe></p>
+				<p><iframe src="samples/04ba838770b4be04e61d387b7caef1c7.data" style="height:88%;" id=iframe1></iframe></p>
 			</ul>
 		</div>
 	
@@ -46,16 +46,16 @@
 </body>
 <script> 	
 	function setIframeHeight(iframe) {
-if (iframe) {
-var iframeWin = iframe.contentWindow || iframe.contentDocument.parentWindow;
-if (iframeWin.document.body) {
-iframe.height = iframeWin.document.documentElement.scrollHeight || iframeWin.document.body.scrollHeight;
-}
-}
-};
+		if (iframe) {
+		var iframeWin = iframe.contentWindow || iframe.contentDocument.parentWindow;
+		if (iframeWin.document.body) {
+		iframe.height = iframeWin.document.documentElement.scrollHeight || iframeWin.document.body.scrollHeight;
+		}
+		}
+	};
 
-window.onload = function () {
-setIframeHeight(document.getElementById('external-frame'));
-};
+	window.onload = function () {
+	setIframeHeight(document.getElementById('iframe1'));
+	};
 	</script>
 </html>
