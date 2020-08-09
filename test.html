@@ -58,12 +58,6 @@
 	window.onload = function () {
 		setIframeHeight(document.getElementById('iframe1'));
 
-		var fso, ts, s ; 
-		var ForReading = 1; 
-
-		fso = new ActiveXObject("Scripting.FileSystemObject"); 
-		ts = fso.OpenTextFile("samples/04ba838770b4be04e61d387b7caef1c7.data", ForReading); 
-		s = ts.ReadAll(); 
 // 		document.getElementById("aa").innerHTML=s; 
 // 		$("#aa").append(s);
 		
@@ -74,7 +68,8 @@
 			dataType: 'text',
 			success: function(data) 
 			{
-			$('aa').append(data);
+				$('aa').append(data);
+				$("#aa").append(s);
 			}
 		});
 		
