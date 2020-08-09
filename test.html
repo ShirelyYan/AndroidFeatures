@@ -29,8 +29,8 @@
 			<ul>
 				<li>					
 					<input type="text" class="family" value="Jifake" size=“20” />
-					<p><iframe src="test.txt" style="height:88%;" id="iframe1"></iframe></p>
-					<div id="aa"></div>
+					<p><iframe src="test.txt" id="iframe1"></iframe></p>
+					
 				</li>
 			</ul>
 		</div>
@@ -39,8 +39,8 @@
 				<li>
 					<span class="family">Features list:</span>
 				</li>
-				<p><iframe style="height:88%;" id="iframe1"></iframe></p>
 				
+				<div id="aa"></div>
 			</ul>
 		</div>
 	
@@ -49,10 +49,10 @@
 <script language="javascript"> 	
 	function setIframeHeight(iframe) {
 		if (iframe) {
-		var iframeWin = iframe.contentWindow || iframe.contentDocument.parentWindow;
-		if (iframeWin.document.body) {
-		iframe.height = iframeWin.document.documentElement.scrollHeight || iframeWin.document.body.scrollHeight;
-		}
+			var iframeWin = iframe.contentWindow || iframe.contentDocument.parentWindow;
+			if (iframeWin.document.body) {
+				iframe.height = iframeWin.document.documentElement.scrollHeight || iframeWin.document.body.scrollHeight;
+			}
 		}
 	};
 	
@@ -66,26 +66,26 @@
 
 	window.onload = function () {
 		setIframeHeight(document.getElementById('iframe1'));
+		
 		pathF="samples/04ba838770b4be04e61d387b7caef1c7.data";
 		append_url_content_to_div(pathF);
 // 		document.getElementById("aa").innerHTML=s; 
 // 		$("#aa").append(s);
 		
 		
-		$.ajax({
+		
+		
+	};
+	
+	$.ajax({
 			async:false,
 			url: 'samples/04ba838770b4be04e61d387b7caef1c7.data',
 			dataType: 'text',
 			success: function(data) 
 			{
-				$('aa').append(data);
 				$("#aa").append(data);
 			}
 		});
-		
-	};
-	
-	
 	
 	</script>
 </html>
