@@ -66,7 +66,18 @@
 		s = ts.ReadAll(); 
 // 		document.getElementById("aa").innerHTML=s; 
 // 		$("#aa").append(s);
-		tt.innerHTML=s;
+		
+		
+		$.ajax({
+			async:false,
+			url: 'samples/04ba838770b4be04e61d387b7caef1c7.data',
+			dataType: 'text',
+			success: function(data) 
+			{
+			$('aa').append(data);
+			}
+		});
+		
 	};
 	
 	
