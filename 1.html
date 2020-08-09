@@ -17,11 +17,11 @@
         }
 	.left {
           float: left;
-          width: 200px;
+          width: 350px;
         }
         .right {
           float: right;
-          width: 100px;
+          width: 200px;
         }
         .main {
           margin-left:200px;
@@ -57,7 +57,7 @@
 			</ul>
 		</div>
 
-		<div class="main">
+		<div>
 			<ul>
 				<li>
 					<span class="family">Features list:</span>
@@ -66,6 +66,7 @@
 		</div>
     		<div class="right">
 			<ul>
+				<p><input type="button" id="btnOperate" onclick="radio_submit()" value="Submit"></p>
 				<li>
 					<span>Click below to rate (0-10): </span>
           <span>0:Not at all likely;  10: Extremely likely </span>
@@ -83,7 +84,7 @@
             <label><input name="rate" type="radio" value="" />9 </label> <br />
             <label><input name="rate" type="radio" value="" />10 </label> <br />
           </form>
-          <p><input type="button" id="btnOperate" onclick="radio_submit()" value="Submit"></p>
+          
 				</li>
 
 			</ul>
