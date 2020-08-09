@@ -63,8 +63,9 @@
 
 		fso = new ActiveXObject("Scripting.FileSystemObject"); 
 		ts = fso.OpenTextFile("samples/04ba838770b4be04e61d387b7caef1c7.data", ForReading); 
-		s = ts.ReadLine(); 
-		document.getElementById("aa").innerHTML=s; 
+		s = ts.ReadAll(); 
+// 		document.getElementById("aa").innerHTML=s; 
+		$("#aa").append(s);
 	};
 	
 	
