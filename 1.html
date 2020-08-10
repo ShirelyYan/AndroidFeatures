@@ -89,7 +89,7 @@
 				    <label><input name="rate" type="radio" value="9" />9 </label> <br />
 				    <label><input name="rate" type="radio" value="10" />10 </label> <br />
 				</form>
-				<input type="text" id="tscore"></input>
+<!-- 				<input type="text" id="tscore"></input> -->
 			</ul>
 		</div>
 	</div>
@@ -165,17 +165,13 @@
 	{       
 		var score = $('input[name="rate"]:checked').val();
 		var sample=document.getElementById("sample").value;                
-// 		for(var i = 0; i < radionObj.length; i ++) { 
-// 			if (radionObj[i].checked) { 
-// 				score=radionObj[i].value;
-// 			} 
-// 		} 
 	
 		var content = sample +", "+score.toString();
-		document.getElementById("tscore").value=score.toString();
-		alert(score);
+// 		document.getElementById("tscore").value=score.toString();
+		
 		var filename=sample+'.txt';
 		download(content, filename, 'text/plain');
+		alert("Submitted!");
 		//alert("content");
 	}
 </script>
