@@ -25,24 +25,30 @@
     </li>
   </div>
 	
-		<div class="left">
+		<div class="right" style='position:absolute z-index:999; top:0;'>
 			<ul>
-				<li>					
-					<input type="text" class="family" value="Jifake" size=“20” />
-					<p><iframe src="test.txt" id="iframe1" frameborder=0></iframe></p>
-					
-				</li>
-			</ul>
-		</div>
-		<div>
-			<ul>
-				<li>
-					<span class="family">Features list:</span>
-				</li>
 				
-				<iframe src="samples/0aef8a256e100ed2ab0883cc3a9cad14.txt" name=iframe2 frameborder=0></iframe>
-				
-				<div id="aa"></div>
+				<p><input type="button" id="btnOperate" onclick="radio_submit()" value="Submit"></p>
+				<span>According to the Malware Family description and sample's permissions and APIs, is it like a malware？ </span>
+				<br />
+				<br />
+				<span>Click below to rate: </span><br />
+				<span>0:Not at all likely;  </span><br />
+				<span>10: Extremely likely </span>
+				<form method="get"> 
+				    <br />
+				    <label><input name="rate" type="radio" value="" />0 </label> <br />
+				    <label><input name="rate" type="radio" value="" />1 </label> <br />
+				    <label><input name="rate" type="radio" value="" />2 </label> <br />
+				    <label><input name="rate" type="radio" value="" />3 </label> <br />
+				    <label><input name="rate" type="radio" value="" />4 </label> <br />
+				    <label><input name="rate" type="radio" value="" />5 </label> <br />
+				    <label><input name="rate" type="radio" value="" />6 </label> <br />
+				    <label><input name="rate" type="radio" value="" />7 </label> <br />
+				    <label><input name="rate" type="radio" value="" />8 </label> <br />
+				    <label><input name="rate" type="radio" value="" />9 </label> <br />
+				    <label><input name="rate" type="radio" value="" />10 </label> <br />
+				</form>
 			</ul>
 		</div>
 	
@@ -58,13 +64,18 @@
 		}
 	};
 	
-// 	function append_url_content_to_div(url){
-// 	  $.get(url, function(returned_data){
-// 	    console.dir(returned_data);
-// 	    var content = '<span>'+returned_data+'</span>';
-// 	    $("#aa").append(content);                                                         
-// 	  });
-// 	}
+	function radio_submit() 
+	{                              
+		var arr = new Array(); 
+		var sample=document.getElementById("sample").value;
+		var items = document.getElementsByName("category");                 
+		var score = $('input[name="rate"]:checked').val();
+		var content = sample +", "+score.toString();
+		alert("submitted！");
+		var filename=sample+'.txt';
+// 		download(content, filename, 'text/plain');
+		alert("content");
+	}
 	
 	window.onload = function () {
 		setIframeHeight(document.getElementById('iframe1'));
