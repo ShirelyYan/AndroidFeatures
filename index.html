@@ -19,22 +19,24 @@
     </div>
 </body>
 <script language="javascript"> 
-    let giftScope =[
-			{
-				code:0,name:"0"
-			},	{
-				code:1, name:"1"
-			},	{
-				code:2,name:"2"
-			},	{
-				code:3,name:"3"
-			},
-		]
+	window.onload = function () {
+		let giftScope =[
+				{
+					code:0,name:"0"
+				},	{
+					code:1, name:"1"
+				},	{
+					code:2,name:"2"
+				},	{
+					code:3,name:"3"
+				},
+			]
 
-	const renderOption = (arr , code , name) => arr ?  arr.map( (item,index)=>{
-			return (<Option key={index+item[code]} value={ 
-					typeof(item[code]) === 'number' ? item[code].toString() : item[code]}>{item[name]}</Option>)
-		  }) : null
+		const renderOption = (arr , code , name) => arr ?  arr.map( (item,index)=>{
+				return (<Option key={index+item[code]} value={ 
+						typeof(item[code]) === 'number' ? item[code].toString() : item[code]}>{item[name]}</Option>)
+			  }) : null
+		}
 	}
 </script>    
 </html>
