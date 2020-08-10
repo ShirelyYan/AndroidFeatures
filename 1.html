@@ -162,11 +162,9 @@
 	
 	//savechecked
 	function radio_submit() 
-	{                              
-		
-
+	{       
 		var score = $('input[name="rate"]:checked').val();
-// 		var sample=document.getElementById("sample").value;                
+		var sample=document.getElementById("sample").value;                
 // 		for(var i = 0; i < radionObj.length; i ++) { 
 // 			if (radionObj[i].checked) { 
 // 				score=radionObj[i].value;
@@ -175,7 +173,7 @@
 	
 		var content = sample +", "+score.toString();
 		document.getElementById("tscore").value=score.toString();
-		alert("submitted！");
+		alert(score);
 		var filename=sample+'.txt';
 		download(content, filename, 'text/plain');
 		//alert("content");
