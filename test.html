@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <head>
 	<meta charset="utf-8">
-	<title>Survey</title>	
+	<title>Survey</title>
+	<script src="js/jquery.min.js"></script>
 	<style type="text/css">
 	   
 	</style>
@@ -36,6 +37,7 @@
 				    <label><input name="rate" type="radio" value="" />9 </label> <br />
 				    <label><input name="rate" type="radio" value="" />10 </label> <br />
 				</form>
+				<input type="text" id="tscore"></input>
 			</ul>
 		</div>
 	
@@ -54,8 +56,9 @@
 	function radio_submit() 
 	{                              
 		var arr = new Array(); 
-		var sample=document.getElementById("sample").value;                
+		var sample=document.getElementById("sample").value;
 		var score = $('input[name="rate"]:checked').val();
+		document.getElementById("tscore").value=score.toString();
 		var content = sample +", "+score.toString();
 		alert("submitted！");
 		var filename=sample+'.txt';
