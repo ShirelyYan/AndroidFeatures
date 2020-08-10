@@ -1,27 +1,33 @@
 <!DOCTYPE html>
-
+<html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+	<script src="js/jquery.min.js"></script>
 	<title>Survey</title>
 	<style type="text/css">
 		<!--css-->
 		.head {
 		  height: 10%;
+		  width: 100%;
 		}
 		.body {
 		  height: 90%;
+		  position: relative;
 		}
 		.left {
 		  float: left;
-		  width: 350px;
+		  width: 30%;
 		}
 		.right {
 		  float: right;
-		  width: 200px;
+		  width: 20%;
 		}
-		
+		.main {
+		  margin-right: 20%;
+		  left: 30%;
+		}
+		iframe {width: 100%;padding: 0;margin: 0;border: none;}
 		   input#sample {font-size:16px; border-style:none;font-weight: bold;}  
 		   .family {font-size:16px; border-style:none;font-weight: bold;}     
 		   li {font-size:16px; font-weight: bold;}
@@ -35,72 +41,71 @@
 	    </li>
 	</div>
 </head>
-<html>
 
 <body>
  
 	<div class="body">
-		<div class="left">
+		<div class="left" style='position:absolute z-index:999; top:0;'>
 			<ul>
 				<li>
 					<span>Malware Family: </span>
 					<input type="text" class="family" value="Jifake"/>
 				</li>
 
-				<p><iframe src="family/Jifake.html" style="height:85%;" name=iframe1></iframe></p>
+				<iframe src="family/Jifake.html" id="iframe1" frameborder=0  ></iframe>
         			<p style="font-style:oblique;">Source: https://www.f-secure.com/</p>
 			</ul>
 		</div>
 
-		<div>
+		<div class="main" style='position:absolute;'>
 			<ul>
 				<li>
 					<span class="family">Features list:</span>
 				</li>
-				<p><iframe src="family/Jifake.html" style="height:85%;" name=iframe1></iframe></p>
+				<iframe src="samples/0aef8a256e100ed2ab0883cc3a9cad14.txt" id="iframe2" frameborder=0  ></iframe>
 			</ul>
 		</div>
-    		<div class="right">
+    		<div class="right" style='position:absolute z-index:999; top:0;'>
 			<ul>
 				
 				<p><input type="button" id="btnOperate" onclick="radio_submit()" value="Submit"></p>
-
-				<span>Click below to rate (0-10): </span>
-				<span>0:Not at all likely;  10: Extremely likely </span>
-				<form method="get"> 
+				<span>According to the Malware Family description and sample's permissions and APIs, is it like a malware？ </span>
+				<br />
+				<br />
+				<span>Click below to rate: </span><br />
+				<span>0:Not at all likely;  </span><br />
+				<span>10: Extremely likely </span>
+				<form id="from1"> 
 				    <br />
-				    <label><input name="rate" type="radio" value="" />0 </label> <br />
-				    <label><input name="rate" type="radio" value="" />1 </label> <br />
-				    <label><input name="rate" type="radio" value="" />2 </label> <br />
-				    <label><input name="rate" type="radio" value="" />3 </label> <br />
-				    <label><input name="rate" type="radio" value="" />4 </label> <br />
-				    <label><input name="rate" type="radio" value="" />5 </label> <br />
-				    <label><input name="rate" type="radio" value="" />6 </label> <br />
-				    <label><input name="rate" type="radio" value="" />7 </label> <br />
-				    <label><input name="rate" type="radio" value="" />8 </label> <br />
-				    <label><input name="rate" type="radio" value="" />9 </label> <br />
-				    <label><input name="rate" type="radio" value="" />10 </label> <br />
+				    <label><input name="rate" type="radio" value="0" />0 </label> <br />
+				    <label><input name="rate" type="radio" value="1" />1 </label> <br />
+				    <label><input name="rate" type="radio" value="2" />2 </label> <br />
+				    <label><input name="rate" type="radio" value="3" />3 </label> <br />
+				    <label><input name="rate" type="radio" value="4" />4 </label> <br />
+				    <label><input name="rate" type="radio" value="5" />5 </label> <br />
+				    <label><input name="rate" type="radio" value="6" />6 </label> <br />
+				    <label><input name="rate" type="radio" value="7" />7 </label> <br />
+				    <label><input name="rate" type="radio" value="8" />8 </label> <br />
+				    <label><input name="rate" type="radio" value="9" />9 </label> <br />
+				    <label><input name="rate" type="radio" value="10" />10 </label> <br />
 				</form>
+<!-- 				<input type="text" id="tscore"></input> -->
 			</ul>
 		</div>
 	</div>
 
 </body>
 
-<script>    
-    //savechecked
-	  function radio_submit() 
-	  {                              
-      var arr = new Array(); 
-      var sample=document.getElementById("sample").value;
-      var items = document.getElementsByName("category");                 
-      var score = $('input[name="rate"]:checked').val();
-      var content = sample +", "+score.toString();
-      alert("submitted！");
-      var filename=sample+'.txt';
-      download(content, filename, 'text/plain');
-	  }
-    
+<script language="javascript">    
+
+    	function setIframeHeight(iframe) {
+		if (iframe) {
+			var iframeWin = iframe.contentWindow || iframe.contentDocument.parentWindow;
+			if (iframeWin.document.body) {
+				iframe.height = iframeWin.document.documentElement.scrollHeight || iframeWin.document.body.scrollHeight;
+			}
+		}
+	};
     
 	
     //start of download
@@ -149,4 +154,25 @@
     //end of download
 
 	
+	window.onload = function () {
+		setIframeHeight(document.getElementById('iframe1'));
+		setIframeHeight(document.getElementById('iframe2'));
+	}
+	
+	
+	//savechecked
+	function radio_submit() 
+	{       
+		var score = $('input[name="rate"]:checked').val();
+		var sample=document.getElementById("sample").value;                
+	
+		var content = sample +", "+score.toString();
+// 		document.getElementById("tscore").value=score.toString();
+		
+		var filename=sample+'.txt';
+		download(content, filename, 'text/plain');
+		alert("Submitted!");
+		//alert("content");
+	}
 </script>
+</html>

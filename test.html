@@ -1,70 +1,100 @@
 <!DOCTYPE html>
-
+<html>
 <head>
 	<meta charset="utf-8">
-	
-
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="js/jquery.min.js"></script>
 	<title>Survey</title>
-
-	
 	<style type="text/css">
-        <!--css-->
-        .left {
-          float: left;
-          width: 200px;
-        }
-        .right {
-          float: right;
-          width: 100px;
-        }
-        .main {
-          margin-left:200px;
-          margin-right:100px;
-        }
-		   
+		<!--css-->
+		.head {
+		  height: 10%;
+		  width: 100%;
+		}
+		.body {
+		  height: 90%;
+		  position: relative;
+		}
+		.left {
+		  float: left;
+		  width: 30%;
+		}
+		.right {
+		  float: right;
+		  width: 20%;
+		}
+		.main {
+		  margin-right: 20%;
+		  left: 30%;
+		}
+		iframe {width: 100%;padding: 0;margin: 0;border: none;}
+		input#sample {font-size:16px; border-style:none;font-weight: bold;}  
+		.family {font-size:16px; border-style:none;font-weight: bold;}     
+		li {font-size:16px; font-weight: bold;}
+		.STYLE1 {color: #AAAAAA; font-family: Arial, Helvetica, sans-serif; font-weight: bold; }
 	</style>
+	<div class="head">
+	    <li>
+	      <span class="hidden-xs">Answer Sheet for: </span>
+	      <input type="text" id="sample" class="family" style="min-width: 58%;"  value="0c18bc70ca74dff3e92100722e503c05"/>
+	      <a style="float:right;" href="shirelyyan.github.io/AndroidFeatures.github.io/2.html">Next Page</a>
+	    </li>
+	</div>
 </head>
-<html>
 
 <body>
-  <div>
-    <li>
-      <span class="hidden-xs">Answer Sheet for: </span>
-      <input type="text" id="sample" class="family" style="min-width: 58%;"  value="0c18bc70ca74dff3e92100722e503c05"/>
-      <a style="float:right;" href="shirelyyan.github.io/AndroidFeatures.github.io/2.html">Next Page</a>
-    </li>
-  </div>
-	
-		<div class="left">
-			<ul>
-				<li>
-					
-					<input type="text" class="family" value="Jifake" size=“20” />
-				</li>
+ 
+	<div class="body">
+		
 
-				
-			</ul>
-		</div>
-
-		<div class="main">
+		<div class="main" style='position:absolute;'>
 			<ul>
 				<li>
 					<span class="family">Features list:</span>
 				</li>
+				<iframe src="samples/0aef8a256e100ed2ab0883cc3a9cad14.txt" id="iframe2" frameborder=0  ></iframe>
+				<div id="myDiv"></div>
 			</ul>
 		</div>
-    <div class="right">
-			<ul>
-				<li>
-					<span>Click below to rate (0-10): </span>
-          <span>0:Not at all likely;  10: Extremely likely </span>
-					
-          <p><input type="button" id="btnOperate" onclick="radio_submit()" value="Submit"></p>
-				</li>
-
-			</ul>
-		</div>
-	
+    		
+	</div>
 
 </body>
+
+<script language="javascript">    
+
+    	function setIframeHeight(iframe) {
+		if (iframe) {
+			var iframeWin = iframe.contentWindow || iframe.contentDocument.parentWindow;
+			if (iframeWin.document.body) {
+				iframe.height = iframeWin.document.documentElement.scrollHeight || iframeWin.document.body.scrollHeight;
+			}
+		}
+	};
+	
+	window.onload = function () {
+		setIframeHeight(document.getElementById('iframe1'));
+		setIframeHeight(document.getElementById('iframe2'));
+		
+		htmlobj=$.ajax({url:"samples/0aef8a256e100ed2ab0883cc3a9cad14.txt",async:false});//通过ajax读取test1.txt文本文件。
+		  $("#myDiv").html(htmlobj.responseText.replace(/.+/g,'</br>'));//根据回车换行符进行替换，替换成html换行符
+		  });
+	}
+	
+	
+	//savechecked
+	function radio_submit() 
+	{       
+		var score = $('input[name="rate"]:checked').val();
+		var sample=document.getElementById("sample").value;                
+	
+		var content = sample +", "+score.toString();
+// 		document.getElementById("tscore").value=score.toString();
+		
+		var filename=sample+'.txt';
+		download(content, filename, 'text/plain');
+		alert("Submitted!");
+		
+	}
+</script>
 </html>
