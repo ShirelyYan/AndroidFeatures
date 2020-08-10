@@ -1,25 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head lang="en">
-    <meta charset="UTF-8">
-    <title>html5</title>
-    <style type="text/css">
-    .theme{
-      display: block;
-      width: 1000px;
-      font-size: 30px;
-      margin: 100px auto;
-    }
-    </style>
+	<meta charset="UTF-8">
+	<title>indexfortest</title>
+	<script src="js/jquery.min.js"></script>
+	<style type="text/css">
+
+	</style>
 </head>
 <body>
-<div class="theme">
-  Android Malware Samples
-</div>
-<div>
-  <p>
-    <a href="./AndroidFeatures.github.io/0a57c96116222beb1874aa3eca04f1ff.html" target="_blank">0a57c96116222beb1874aa3eca04f1ff</a>
-  </p>
-</div>
+    <div>
+      Android Malware Samples
+    </div>
+    <div>
+      <p>
+        <a href="./AndroidFeatures.github.io/0a57c96116222beb1874aa3eca04f1ff.html" target="_blank">0a57c96116222beb1874aa3eca04f1ff</a>
+        <Select mode="tags" >{renderOption(giftScope,'code','name')}</Select>
+      </p>
+    </div>
 </body>
+<script language="javascript"> 
+	window.onload = function () {
+		let giftScope =[
+				{
+					code:0,name:"0"
+				},	{
+					code:1, name:"1"
+				},	{
+					code:2,name:"2"
+				},	{
+					code:3,name:"3"
+				},
+			]
+
+		const renderOption = (arr , code , name) => arr ?  arr.map( (item,index)=>{
+				return (<Option key={index+item[code]} value={ 
+						typeof(item[code]) === 'number' ? item[code].toString() : item[code]}>{item[name]}</Option>)
+			  }) : null
+		}
+	}
+</script>    
 </html>
