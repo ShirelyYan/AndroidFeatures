@@ -1,50 +1,104 @@
 <!DOCTYPE html>
+<html>
 <head>
 	<meta charset="utf-8">
-	<title>Survey</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="js/jquery.min.js"></script>
+	<title>Survey</title>
 	<style type="text/css">
-	   
+		<!--css-->
+		.head {
+		  height: 10%;
+		  width: 100%;
+		}
+		.body {
+		  height: 90%;
+		  position: relative;
+		}
+		.left {
+		  float: left;
+		  width: 30%;
+		}
+		.right {
+		  float: right;
+		  width: 20%;
+		}
+		.main {
+		  margin-right: 20%;
+		  left: 30%;
+		}
+		iframe {width: 100%;padding: 0;margin: 0;border: none;}
+		input#sample {font-size:16px; border-style:none;font-weight: bold;}  
+		.family {font-size:16px; border-style:none;font-weight: bold;}     
+		li {font-size:16px; font-weight: bold;}
+		.STYLE1 {color: #AAAAAA; font-family: Arial, Helvetica, sans-serif; font-weight: bold; }
 	</style>
+	<div class="head">
+	    <li>
+	      <span class="hidden-xs">Answer Sheet for: </span>
+	      <input type="text" id="sample" class="family" style="min-width: 58%;"  value="0c18bc70ca74dff3e92100722e503c05"/>
+	      <a style="float:right;" href="shirelyyan.github.io/AndroidFeatures.github.io/2.html">Next Page</a>
+	    </li>
+	</div>
 </head>
-<html>
 
 <body>
-  <div>
-    <li>
-      <span class="hidden-xs">Answer Sheet for: </span>
-      <input type="text" id="sample" class="family" style="min-width: 58%;"  value="0c18bc70ca74dff3e92100722e503c05"/>
-      <a style="float:right;" href="shirelyyan.github.io/AndroidFeatures.github.io/2.html">Next Page</a>
-    </li>
-  </div>
-	
-		<div style='position:absolute z-index:999; top:0;'>
+ 
+	<div class="body">
+		<div class="left" style='position:absolute z-index:999; top:0;'>
+			<ul>
+				<li>
+					<span>Malware Family: </span>
+					<input type="text" class="family" value="Jifake"/>
+				</li>
+
+				<iframe src="family/Jifake.html" id="iframe1" frameborder=0  ></iframe>
+        			<p style="font-style:oblique;">Source: https://www.f-secure.com/</p>
+			</ul>
+		</div>
+
+		<div class="main" style='position:absolute;'>
+			<ul>
+				<li>
+					<span class="family">Features list:</span>
+				</li>
+				<iframe src="samples/0aef8a256e100ed2ab0883cc3a9cad14.txt" id="iframe2" frameborder=0  ></iframe>
+			</ul>
+		</div>
+    		<div class="right" style='position:absolute z-index:999; top:0;'>
 			<ul>
 				
 				<p><input type="button" id="btnOperate" onclick="radio_submit()" value="Submit"></p>
-
-				<form method="get"> 
+				<span>According to the Malware Family description and sample's permissions and APIs, is it like a malware？ </span>
+				<br />
+				<br />
+				<span>Click below to rate: </span><br />
+				<span>0:Not at all likely;  </span><br />
+				<span>10: Extremely likely </span>
+				<form id="from1"> 
 				    <br />
-				    <label><input name="rate" type="radio" value="" />0 </label> <br />
-				    <label><input name="rate" type="radio" value="" />1 </label> <br />
-				    <label><input name="rate" type="radio" value="" />2 </label> <br />
-				    <label><input name="rate" type="radio" value="" />3 </label> <br />
-				    <label><input name="rate" type="radio" value="" />4 </label> <br />
-				    <label><input name="rate" type="radio" value="" />5 </label> <br />
-				    <label><input name="rate" type="radio" value="" />6 </label> <br />
-				    <label><input name="rate" type="radio" value="" />7 </label> <br />
-				    <label><input name="rate" type="radio" value="" />8 </label> <br />
-				    <label><input name="rate" type="radio" value="" />9 </label> <br />
-				    <label><input name="rate" type="radio" value="" />10 </label> <br />
+				    <label><input name="rate" type="radio" value="0" />0 </label> <br />
+				    <label><input name="rate" type="radio" value="1" />1 </label> <br />
+				    <label><input name="rate" type="radio" value="2" />2 </label> <br />
+				    <label><input name="rate" type="radio" value="3" />3 </label> <br />
+				    <label><input name="rate" type="radio" value="4" />4 </label> <br />
+				    <label><input name="rate" type="radio" value="5" />5 </label> <br />
+				    <label><input name="rate" type="radio" value="6" />6 </label> <br />
+				    <label><input name="rate" type="radio" value="7" />7 </label> <br />
+				    <label><input name="rate" type="radio" value="8" />8 </label> <br />
+				    <label><input name="rate" type="radio" value="9" />9 </label> <br />
+				    <label><input name="rate" type="radio" value="10" />10 </label> <br />
 				</form>
-				<input type="text" id="tscore"></input>
+<!-- 				<input type="text" id="tscore"></input> -->
 			</ul>
 		</div>
-	
+	</div>
 
 </body>
-<script language="javascript"> 	
-	function setIframeHeight(iframe) {
+
+<script language="javascript">    
+
+    	function setIframeHeight(iframe) {
 		if (iframe) {
 			var iframeWin = iframe.contentWindow || iframe.contentDocument.parentWindow;
 			if (iframeWin.document.body) {
@@ -53,38 +107,16 @@
 		}
 	};
 	
-	function radio_submit() 
-	{                              
-		var arr = new Array(); 
-		var sample=document.getElementById("sample").value;
-		var score = $('input[name="rate"]:checked').val();
-		document.getElementById("tscore").value=score.toString();
-		var content = sample +", "+score.toString();
-		alert("submitted！");
-		var filename=sample+'.txt';
-// 		download(content, filename, 'text/plain');
-		alert("content");
-	}
-	
 	window.onload = function () {
 		setIframeHeight(document.getElementById('iframe1'));
-		
-		pathF="samples/04ba838770b4be04e61d387b7caef1c7.data";
-		patht="samples/0aef8a256e100ed2ab0883cc3a9cad14.txt"
-// 		append_url_content_to_div(pathF);
-// 		var txtval=iframe2.body.innerText;
-// 		document.getElementById("aa").innerHTML=txtval; 
-// 		
-		
-		var reader = new FileReader();//这是核心,读取操作就是由它完成.
-		reader.readAsText(patht);//读取文件的内容,也可以读取文件的URL
-		reader.onload = function () {
-		    //当读取完成后回调这个函数,然后此时文件的内容存储到了result中,直接操作即可
-		    $("#aa").append(this.result);
-		}
-				
-	};
-
+		setIframeHeight(document.getElementById('iframe2'));
+	}
 	
-	</script>
+	
+	//savechecked
+	function radio_submit() 
+	{       
+
+	}
+</script>
 </html>
