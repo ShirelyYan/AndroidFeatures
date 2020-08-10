@@ -34,10 +34,8 @@
 			]
 
 		const renderOption = (arr , code , name) => arr ?  arr.map( (item,index)=>{
-				return (<Option key={index+item[code]} value={ 
-						typeof(item[code]) === 'number' ? item[code].toString() : item[code]}>{item[name]}</Option>)
-			  }) : null
-		}
+			return (<Option key={index+item[code]} value={ typeof(item[code]) === 'number' ? item[code].toString() : item[code]}>{item[name]}</Option>)
+		  }) : null
 	
 </script>    
 </html>
