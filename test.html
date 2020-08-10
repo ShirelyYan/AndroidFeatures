@@ -24,8 +24,8 @@
 		  width: 20%;
 		}
 		.main {
-		  margin-right: 20%;
-		  left: 30%;
+		  margin-right: 22%;
+		  left: 60%;
 		}
 		iframe {width: 100%;padding: 0;margin: 0;border: none;}
 		input#sample {font-size:16px; border-style:none;font-weight: bold;}  
@@ -47,7 +47,7 @@
 	<div class="body">
 		
 
-		<div class="main" style='position:absolute;'>
+		<div style='position:absolute;'>
 			<ul>
 				<li>
 					<span class="family">Features list:</span>
@@ -73,7 +73,7 @@
 	};
 	
 	window.onload = function () {
-		setIframeHeight(document.getElementById('iframe1'));
+// 		setIframeHeight(document.getElementById('iframe1'));
 		setIframeHeight(document.getElementById('iframe2'));
 		
 		htmlobj=$.ajax({url:"samples/0aef8a256e100ed2ab0883cc3a9cad14.txt",async:false});//通过ajax读取test1.txt文本文件。
