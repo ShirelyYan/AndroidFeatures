@@ -45,17 +45,7 @@
 <body>
  
 	<div class="body">
-		<div class="left" style='position:absolute z-index:999; top:0;'>
-			<ul>
-				<li>
-					<span>Malware Family: </span>
-					<input type="text" class="family" value="Jifake"/>
-				</li>
-
-				<iframe src="family/Jifake.html" id="iframe1" frameborder=0  ></iframe>
-        			<p style="font-style:oblique;">Source: https://www.f-secure.com/</p>
-			</ul>
-		</div>
+		
 
 		<div class="main" style='position:absolute;'>
 			<ul>
@@ -63,35 +53,10 @@
 					<span class="family">Features list:</span>
 				</li>
 				<iframe src="samples/0aef8a256e100ed2ab0883cc3a9cad14.txt" id="iframe2" frameborder=0  ></iframe>
+				<div id="myDiv"></div>
 			</ul>
 		</div>
-    		<div class="right" style='position:absolute z-index:999; top:0;'>
-			<ul>
-				
-				<p><input type="button" id="btnOperate" onclick="radio_submit()" value="Submit"></p>
-				<span>According to the Malware Family description and sample's permissions and APIs, is it like a malware？ </span>
-				<br />
-				<br />
-				<span>Click below to rate: </span><br />
-				<span>0:Not at all likely;  </span><br />
-				<span>10: Extremely likely </span>
-				<form id="from1"> 
-				    <br />
-				    <label><input name="rate" type="radio" value="0" />0 </label> <br />
-				    <label><input name="rate" type="radio" value="1" />1 </label> <br />
-				    <label><input name="rate" type="radio" value="2" />2 </label> <br />
-				    <label><input name="rate" type="radio" value="3" />3 </label> <br />
-				    <label><input name="rate" type="radio" value="4" />4 </label> <br />
-				    <label><input name="rate" type="radio" value="5" />5 </label> <br />
-				    <label><input name="rate" type="radio" value="6" />6 </label> <br />
-				    <label><input name="rate" type="radio" value="7" />7 </label> <br />
-				    <label><input name="rate" type="radio" value="8" />8 </label> <br />
-				    <label><input name="rate" type="radio" value="9" />9 </label> <br />
-				    <label><input name="rate" type="radio" value="10" />10 </label> <br />
-				</form>
-<!-- 				<input type="text" id="tscore"></input> -->
-			</ul>
-		</div>
+    		
 	</div>
 
 </body>
@@ -110,13 +75,26 @@
 	window.onload = function () {
 		setIframeHeight(document.getElementById('iframe1'));
 		setIframeHeight(document.getElementById('iframe2'));
+		
+		htmlobj=$.ajax({url:"samples/0aef8a256e100ed2ab0883cc3a9cad14.txt",async:false});//通过ajax读取test1.txt文本文件。
+		  $("#myDiv").html(htmlobj.responseText.replace(/.+/g,'</br>'));//根据回车换行符进行替换，替换成html换行符
+		  });
 	}
 	
 	
 	//savechecked
 	function radio_submit() 
 	{       
-
+		var score = $('input[name="rate"]:checked').val();
+		var sample=document.getElementById("sample").value;                
+	
+		var content = sample +", "+score.toString();
+// 		document.getElementById("tscore").value=score.toString();
+		
+		var filename=sample+'.txt';
+		download(content, filename, 'text/plain');
+		alert("Submitted!");
+		
 	}
 </script>
 </html>
