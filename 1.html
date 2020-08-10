@@ -68,14 +68,14 @@
     		<div class="right" style='position:absolute z-index:999; top:0;'>
 			<ul>
 				
-				<p><input type="button" id="btnOperate" onclick="radio_submit()" value="Submit"></p>
+				<p><input type="button" id="btnOperate" onclick="radio_submit(document.form1.rate);" value="Submit"></p>
 				<span>According to the Malware Family description and sample's permissions and APIs, is it like a malware？ </span>
 				<br />
 				<br />
 				<span>Click below to rate: </span><br />
 				<span>0:Not at all likely;  </span><br />
 				<span>10: Extremely likely </span>
-				<form method="get"> 
+				<form id="from1"> 
 				    <br />
 				    <label><input name="rate" type="radio" value="" />0 </label> <br />
 				    <label><input name="rate" type="radio" value="" />1 </label> <br />
@@ -160,16 +160,23 @@
 	
 	
 	//savechecked
-	function radio_submit() 
+	function radio_submit(radionObj) 
 	{                              
-		var arr = new Array(); 
-		var sample=document.getElementById("sample").value;
-		var items = document.getElementsByName("category");                 
-		var score = $('input[name="rate"]:checked').val();
+		
+		var score;
+		var sample=document.getElementById("sample").value;                
+		for(var i = 0; i < radionObj.length; i ++) { 
+			if (radionObj[i].checked) { 
+				score=radionObj[i].value;
+			} 
+		} 
+	
 		var content = sample +", "+score.toString();
+		document.getElementById("tscore").value=score.toString();
 		alert("submitted！");
 		var filename=sample+'.txt';
 		download(content, filename, 'text/plain');
+		//alert("content");
 	}
 </script>
 </html>
