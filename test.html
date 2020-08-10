@@ -3,15 +3,7 @@
 	<meta charset="utf-8">
 	<title>Survey</title>	
 	<style type="text/css">
-        <!--css-->
-        .left {
-          float: left;
-          width: 400px;
-        }
-        .right {
-          float: right;
-          width: 200px;
-        }	   
+	   
 	</style>
 </head>
 <html>
@@ -25,16 +17,11 @@
     </li>
   </div>
 	
-		<div class="right" style='position:absolute z-index:999; top:0;'>
+		<div style='position:absolute z-index:999; top:0;'>
 			<ul>
 				
 				<p><input type="button" id="btnOperate" onclick="radio_submit()" value="Submit"></p>
-				<span>According to the Malware Family description and sample's permissions and APIs, is it like a malware？ </span>
-				<br />
-				<br />
-				<span>Click below to rate: </span><br />
-				<span>0:Not at all likely;  </span><br />
-				<span>10: Extremely likely </span>
+
 				<form method="get"> 
 				    <br />
 				    <label><input name="rate" type="radio" value="" />0 </label> <br />
@@ -67,8 +54,7 @@
 	function radio_submit() 
 	{                              
 		var arr = new Array(); 
-		var sample=document.getElementById("sample").value;
-		var items = document.getElementsByName("category");                 
+		var sample=document.getElementById("sample").value;                
 		var score = $('input[name="rate"]:checked').val();
 		var content = sample +", "+score.toString();
 		alert("submitted！");
