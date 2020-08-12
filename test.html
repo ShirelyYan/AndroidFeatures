@@ -216,8 +216,8 @@
 			tArray[k]=new Array(2);  //声明第k列一维数组，每一个一维数组里面的一个元素都是一个数组；
 			var sid="score"+k.toString();
 			var fid="feature"+k.toString();
-			if（document.getElementById(fid).value=null）
-			alert(fid);
+			if（!document.getElementById(fid).value）
+				alert(fid);
 			tArray[k][0]=document.getElementById(fid).value;
 			tArray[k][1]=document.getElementById(sid).value;
 			
