@@ -21,7 +21,7 @@
 			var check=true;
 			for (i = 0; i < con.length; i++) {  
 				alert(reg.test(con[i].value));
-				if(reg.test(con[i].value)===false) //输出是否符合zhi要求，true符合，false不符dao合
+				if(!!con[i].value && reg.test(con[i].value)===false) //输出是否符合zhi要求，true符合，false不符dao合
 				 check=false;                   
 				              
 			} 
