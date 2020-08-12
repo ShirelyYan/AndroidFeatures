@@ -1,41 +1,33 @@
 <!DOCTYPE html>
 <html>
-<head lang="en">
-	<meta charset="UTF-8">
-	<title>indexfortest</title>
-	<script src="js/jquery.min.js"></script>
-	<script src="js/angular.min.js"></script>
-	<style type="text/css">
-
-	</style>
+<head>
+<meta charset="utf-8">
+<title>index</title>
 </head>
 <body>
-    <div>
-      Android Malware Samples
-    </div>
-    <div>
-      <p>
-        <a href="./AndroidFeatures.github.io/0a57c96116222beb1874aa3eca04f1ff.html" target="_blank">0a57c96116222beb1874aa3eca04f1ff</a>
-        <Select mode="tags" >{renderOption(giftScope,'code','name')}</Select>
-      </p>
-    </div>
-</body>
-<script language="javascript"> 
-		let giftScope =[
-				{
-					code:0,name:"0"
-				},	{
-					code:1, name:"1"
-				},	{
-					code:2,name:"2"
-				},	{
-					code:3,name:"3"
-				},
-			]
-
-		const renderOption = (arr , code , name) => arr ?  arr.map( (item,index)=>{
-			return (<Option key={index+item[code]} value={ typeof(item[code]) === 'number' ? item[code].toString() : item[code]}>{item[name]}</Option>)
-		  }) : null
+<p>Score <input id="score1" name="score" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+	<input type="text" id="input1" value="permission"/></p>
+<p><input type="button" onclick="checkInput()" value="测试"/></p>
+	<span>sds</span>
 	
-</script>    
+</body>
+	
+	<script>
+		function checkInput(){
+			var con = document.getElementsByName('score'); //获取输入框的内容
+
+// 			var reg = /^\d{0,10}$/; //正规表达式对du象
+			var reg = /^([0-9]|(1[0]))$/;
+			var check=true;
+			for (i = 0; i < con.length; i++) {  
+				alert(reg.test(con[i].value));
+				if(!!con[i].value && reg.test(con[i].value)===false) //输出是否符合zhi要求，true符合，false不符dao合
+				 check=false;                   
+				              
+			} 
+			if(check===false){
+				alert( "Please input number from 0 to 10" ); 
+			}
+        }
+	</script>
 </html>

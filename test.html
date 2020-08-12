@@ -17,27 +17,24 @@
 		}
 		.left {
 		  float: left;
-		  width: 30%;
-		}
-		.right {
-		  float: right;
-		  width: 20%;
+		  width: 50%;
 		}
 		.main {
-		  margin-right: 22%;
-		  left: 60%;
+		  margin-left: 50%;
 		}
 		iframe {width: 100%;padding: 0;margin: 0;border: none;}
 		input#sample {font-size:16px; border-style:none;font-weight: bold;}  
+		.feat {font-size:14px; border-style:none; width: 90%;}
 		.family {font-size:16px; border-style:none;font-weight: bold;}     
 		li {font-size:16px; font-weight: bold;}
-		.STYLE1 {color: #AAAAAA; font-family: Arial, Helvetica, sans-serif; font-weight: bold; }
+		p {margin-block-start:4px;margin-block-end:4px;}
+		
 	</style>
 	<div class="head">
 	    <li>
-	      <span class="hidden-xs">Answer Sheet for: </span>
+	      <span class="hidden-xs">Answer Sheet </span>
 	      <input type="text" id="sample" class="family" style="min-width: 58%;"  value="0c18bc70ca74dff3e92100722e503c05"/>
-	      <a style="float:right;" href="shirelyyan.github.io/AndroidFeatures.github.io/2.html">Next Page</a>
+	      <a style="float:right;" href="">Next Page</a>
 	    </li>
 	</div>
 </head>
@@ -45,15 +42,91 @@
 <body>
  
 	<div class="body">
-		
-
-		<div style='position:absolute;'>
+		<div class="left" style='position:absolute z-index:999; top:0;'>
 			<ul>
 				<li>
-					<span class="family">Features list:</span>
+					<span>Malware Family: </span>
+					<input type="text" class="family" value="Jifake"/>
 				</li>
-				<iframe src="samples/0aef8a256e100ed2ab0883cc3a9cad14.txt" id="iframe2" frameborder=0  ></iframe>
-				<div id="myDiv"></div>
+
+				<iframe src="family/Jifake.html" id="iframe1" frameborder=0  ></iframe>
+        			<p style="font-style:oblique;">Source: https://www.f-secure.com/</p>
+			</ul>
+		</div>
+
+		<div class="main" style='position:absolute;'>
+			<ul>
+				<li>
+					<span class="family">Sample:</span>
+					<input type="text" id="sample" class="family" style="min-width: 58%;"  value="0a57c96116222beb1874aa3eca04f1ff"/>
+				</li>
+				<span>According to the Malware Family description, is this permission or API malicious？ </span>
+				<br />
+				<span>Mark below to rate: </span><br />
+				<span>0:Not at all likely; &emsp; 10: Extremely likely </span>
+				
+          <p>Score: FeatureList</p> 
+	  <p><input name="score" id="score1" size=4 onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+		  <input type="text" id="feature1" class="feat" name="feature" value="RequestedPermissionList_android.permission.BATTERY_STATS"/></p>   
+          <p><input name="score" id="score2" size=4 onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+		  <input type="text" id="feature2" class="feat" name="feature" value="RequestedPermissionList_android.permission.CAMERA"/></p>  
+          <p><input name="score" id="score3" size=4 onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+		  <input type="text" id="feature3" class="feat" name="feature" value="RequestedPermissionList_android.permission.SYSTEM_ALERT_WINDOW"/></p>     
+          <p><input name="score" id="score4" size=4 onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+		  <input type="text" id="feature4" class="feat" name="feature" value="RequestedPermissionList_android.permission.KILL_BACKGROUND_PROCESSES"/></p>     
+          <p><input name="score" id="score5" size=4 onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+		  <input type="text" id="feature5" class="feat" name="feature" value="RequestedPermissionList_com.android.launcher.permission.WRITE_SETTINGS"/></p>  
+          <p><input name="score" id="score6" size=4 onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+		  <input type="text" id="feature6" class="feat" name="feature" value="RequestedPermissionList_android.permission.GET_TASKS"/></p>  
+          <p><input name="score" id="score7" size=4 onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+		  <input type="text" id="feature7" class="feat" name="feature" value="RequestedPermissionList_android.permission.ACCESS_WIFI_STATE"/></p>  
+          <p><input name="score" id="score8" size=4 onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+		  <input type="text" id="feature8" class="feat" name="feature" value="RequestedPermissionList_android.permission.WAKE_LOCK"/></p>  
+          <p><input name="score" id="score9" size=4 onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+		  <input type="text" id="feature9" class="feat" name="feature" value="RequestedPermissionList_android.permission.CHANGE_WIFI_STATE"/></p> 
+          <p><input name="score" id="score10" size=4 onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+		  <input type="text" id="feature10" class="feat" name="feature" value="RequestedPermissionList_android.permission.RECEIVE_SMS"/></p>  
+          <p><input name="score" id="score11" size=4 onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+		  <input type="text" id="feature11" class="feat" name="feature" value="RequestedPermissionList_android.permission.READ_CONTACTS"/></p>  
+          <p><input name="score" id="score12" size=4 onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+		  <input type="text" id="feature12" class="feat" name="feature" value="RequestedPermissionList_android.permission.CLEAR_APP_CACHE"/></p>  
+          <p><input name="score" id="score13" size=4 onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+		  <input type="text" id="feature13" class="feat" name="feature" value="RequestedPermissionList_android.permission.BLUETOOTH"/></p> 
+          <p><input name="score" id="score14" size=4 onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+		  <input type="text" id="feature14" class="feat" name="feature" value="RequestedPermissionList_android.permission.RESTART_PACKAGES"/></p> 
+          <p><input name="score" id="score15" size=4 onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+		  <input type="text" id="feature15" class="feat" name="feature" value="RequestedPermissionList_oicq.wlogin_sdk.permission.WloginProvider.WRITE"/></p> 
+          <p><input name="score" id="score16" size=4 onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+		  <input type="text" id="feature16" class="feat" name="feature" value="RequestedPermissionList_android.permission.GET_ACCOUNTS"/></p> 
+          <p><input name="score" id="score17" size=4 onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+		  <input type="text" id="feature17" class="feat" name="feature" value="RequestedPermissionList_com.qq.superuser.READ_PERMISSION"/></p> 
+          <p><input name="score" id="score18" size=4 onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+		  <input type="text" id="feature18" class="feat" name="feature" value="SuspiciousApiList_Landroid/net/wifi/WifiManager.getWifiState"/></p> 
+          <p><input name="score" id="score19" size=4 onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+		  <input type="text" id="feature19" class="feat" name="feature" value="SuspiciousApiList_Landroid/content/Context.getSystemService"/></p> 
+          <p><input name="score" id="score20" size=4 onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+		  <input type="text" id="feature20" class="feat" name="feature" value="SuspiciousApiList_Lorg/apache/http/client/methods/HttpPost"/></p> 
+          <p><input name="score" id="score21" size=4 onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+		  <input type="text" id="feature21" class="feat" name="feature" value="SuspiciousApiList_Landroid/telephony/TelephonyManager.getDeviceId"/></p> 
+          <p><input name="score" id="score22" size=4 onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+		  <input type="text" id="feature22" class="feat" name="feature" value="SuspiciousApiList_Ljava/lang/Runtime;->exec"/></p> 
+          <p><input name="score" id="score23" size=4 onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+		  <input type="text" id="feature23" class="feat" name="feature" value="SuspiciousApiList_system/bin/su"/></p> 
+          <p><input name="score" id="score24" size=4 onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+		  <input type="text" id="feature24" class="feat" name="feature" value="SuspiciousApiList_Landroid/telephony/SmsManager.sendTextMessage"/></p> 
+          <p><input name="score" id="score25" size=4 onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+		  <input type="text" id="feature25" class="feat" name="feature" value="SuspiciousApiList_Landroid/app/Activity.getSystemService"/></p> 
+          <p><input name="score" id="score26" size=4 onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+		  <input type="text" id="feature26" class="feat" name="feature" value="SuspiciousApiList_Landroid/telephony/TelephonyManager.getSubscriberId"/></p> 
+          <p><input name="score" id="score27" size=4 onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+		  <input type="text" id="feature27" class="feat" name="feature" value="SuspiciousApiList_Landroid/content/pm/PackageManager.getPackageInfo"/></p> 
+          <p><input name="score" id="score28" size=4 onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+		  <input type="text" id="feature28" class="feat" name="feature" value="SuspiciousApiList_Ljava/io/IOException;->printStackTrace"/></p> 
+          <p><input name="score" id="score29" size=4 onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+		  <input type="text" id="feature29" class="feat" name="feature" value="SuspiciousApiList_Landroid/net/wifi/WifiManager.setWifiEnabled"/></p> 
+				<p><input type="button" id="btnOperate" onclick="createOrder()" value="Submit"></p>
+<!-- 				<textarea id="order" rows='10' cols='100'></textarea> -->
+				</div>
 			</ul>
 		</div>
     		
@@ -63,7 +136,53 @@
 
 <script language="javascript">    
 
-    	function setIframeHeight(iframe) {
+    //start of download
+    function download(strData, strFileName, strMimeType) {
+      var D = document,
+      A = arguments,
+      a = D.createElement("a"),
+      d = A[0],
+      n = A[1],
+      t = A[2] || "text/plain";
+
+       //build download link:
+      a.href = "data:" + strMimeType + "charset=utf-8," + escape(strData);
+
+
+      if (window.MSBlobBuilder) { // IE10
+        var bb = new MSBlobBuilder();
+        bb.append(strData);
+        return navigator.msSaveBlob(bb, strFileName);
+      } /* end if(window.MSBlobBuilder) */
+
+
+      if ('download' in a) { //FF20, CH19
+        a.setAttribute("download", n);
+        a.innerHTML = "downloading...";
+        D.body.appendChild(a);
+        setTimeout(function() {
+          var e = D.createEvent("MouseEvents");
+          e.initMouseEvent("click", true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+          a.dispatchEvent(e);
+          D.body.removeChild(a);
+        }, 66);
+        return true;
+      }; /* end if('download' in a) */
+
+
+      //do iframe dataURL download: (older W3)
+      var f = D.createElement("iframe");
+      D.body.appendChild(f);
+      f.src = "data:" + (A[2] ? A[2] : "application/octet-stream") + (window.btoa ? ";base64" : "") + "," + (window.btoa ? window.btoa : escape)(strData);
+      setTimeout(function() {
+        D.body.removeChild(f);
+      }, 333);
+      return true;
+    }
+    //end of download
+
+	//Automatic height adjustment
+	function setIframeHeight(iframe) {
 		if (iframe) {
 			var iframeWin = iframe.contentWindow || iframe.contentDocument.parentWindow;
 			if (iframeWin.document.body) {
@@ -73,27 +192,66 @@
 	};
 	
 	window.onload = function () {
-// 		setIframeHeight(document.getElementById('iframe1'));
-		setIframeHeight(document.getElementById('iframe2'));
-		
-		htmlobj=$.ajax({url:"samples/0aef8a256e100ed2ab0883cc3a9cad14.txt",async:false});//通过ajax读取test1.txt文本文件。
-		  $("#myDiv").html(htmlobj.responseText.replace(/.+/g,'</br>'));//根据回车换行符进行替换，替换成html换行符
-		  });
+		setIframeHeight(document.getElementById('iframe1'));
 	}
 	
+	//score:0-10
+	function checkInput(){
+		var con = document.getElementsByName('score'); //获取输入框的内容
+		var reg = /^([0-9]|(1[0]))$/;//正规表达式
+		var check=true;
+		for (i = 0; i < con.length; i++) {  
+			if(!!con[i].value && reg.test(con[i].value)===false) //输出是否符合zhi要求，true符合，false不符dao合
+			 check=false;
+		} 
+		if(check===false){
+			alert( "Please input number from 0 to 10" ); 
+		}
+        }
 	
 	//savechecked
-	function radio_submit() 
+	function createOrder() 
 	{       
-		var score = $('input[name="rate"]:checked').val();
+		checkInput();
+		var score = $('input[name="feature"]');//feature列表
+		var con = document.getElementsByName('score');//score列表
+		var sid,fid,num;
+		var tArray = new Array();  //2*con.length数组，先声明一维
+		for(var k=0;k<con.length;k++){    //第k列：{featurename，score}
+			tArray[k]=new Array(2);  //声明第k列一维数组，每一个一维数组里面的一个元素都是一个数组；
+			num=k+1;
+			sid="score"+num;
+			fid="feature"+num;
+			tArray[k][0]=document.getElementById(fid.toString()).value;
+			tArray[k][1]=document.getElementById(sid.toString()).value;
+			
+		}
 		var sample=document.getElementById("sample").value;                
-	
-		var content = sample +", "+score.toString();
-// 		document.getElementById("tscore").value=score.toString();
+// 		var content = sample +", "+tArray.toString();
+// 		document.getElementById("order").value=tArray.toString();		
+// 		var filename=sample+'.txt';
+// 		download(content, filename, 'text/plain');
+// 		alert("Submitted!");		
 		
-		var filename=sample+'.txt';
-		download(content, filename, 'text/plain');
-		alert("Submitted!");
+		//save CSV
+		let str = `Feature,Rate(0-10)\n`;;
+		//增加\t为了不让表格显示科学计数法或者其他格式
+		for(let i = 0 ; i < tArray.length ; i++ ){
+			for(let item in tArray[i]){
+				str+=`${tArray[i][item] + '\t'},`;
+			}
+			str+='\n';
+		}
+		//encodeURIComponent解决中文乱码
+		let uri = 'data:text/csv;charset=utf-8,\ufeff' + encodeURIComponent(str);
+		//通过创建a标签实现
+		var link = document.createElement("a");
+		link.href = uri;
+		//对下载的文件命名
+		link.download = sample+".csv";
+		document.body.appendChild(link);
+		link.click();
+		document.body.removeChild(link);
 		
 	}
 </script>
