@@ -166,11 +166,9 @@
 	//score:0-10
 	function checkInput(){
 		var con = document.getElementsByName('score'); //获取输入框的内容
-
 		var reg = /^([0-9]|(1[0]))$/;//正规表达式
 		var check=true;
 		for (i = 0; i < con.length; i++) {  
-			alert(reg.test(con[i].value));
 			if(reg.test(con[i].value)===false) //输出是否符合zhi要求，true符合，false不符dao合
 			 check=false;
 		} 
