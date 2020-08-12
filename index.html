@@ -20,11 +20,11 @@
 			var reg = /^\d{0,10}$/; //正规表达式对du象
 			var check=true;
 			for (i = 0; i < items.length; i++) {                    
-				if(!reg.test(con[i].value)) //输出是否符合zhi要求，true符合，false不符dao合
+				if(reg.test(con[i].value)===false) //输出是否符合zhi要求，true符合，false不符dao合
 				 check=false;                   
-				}               
+				              
 			} 
-			if(!check){
+			if(check===false){
 				alert( "Please input number from 0 to 10" ); 
 			}
         }
