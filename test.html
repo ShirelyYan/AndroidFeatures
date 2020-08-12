@@ -56,9 +56,13 @@
 		<div class="main" style='position:absolute;'>
 			<ul>
 				<li>
-					<span class="family">Features list:</span>
+					<span class="family">Sample:</span>
 					<input type="text" id="sample" class="family" style="min-width: 58%;"  value="0a57c96116222beb1874aa3eca04f1ff"/>
 				</li>
+				<span>According to the Malware Family description, is this permission or API malicious？ </span>
+				<br />
+				<span>Mark below to rate: </span><br />
+				<span>0:Not at all likely;   10: Extremely likely </span>
 				<p><input type="button" id="btnOperate" onclick="createOrder()" value="Submit"></p>
           <p>Score: FeatureList</p> 
 	  <p><input name="score" id="score1" size=4 onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
@@ -120,7 +124,7 @@
           <p><input name="score" id="score29" size=4 onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
 		  <input type="text" id="feature29" class="feat" name="feature" value="SuspiciousApiList_Landroid/net/wifi/WifiManager.setWifiEnabled"/></p> 
 				
-				<textarea id="order" rows='10' cols='100'></textarea>
+<!-- 				<textarea id="order" rows='10' cols='100'></textarea> -->
 				</div>
 			</ul>
 		</div>
