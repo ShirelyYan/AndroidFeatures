@@ -15,11 +15,11 @@
 	<script>
 		function checkInput(){
 			var con = document.getElementsByName('score'); //获取输入框的内容
-			
-			alert(con.length); 
+
 			var reg = /^\d{0,10}$/; //正规表达式对du象
 			var check=true;
-			for (i = 0; i < items.length; i++) {                    
+			for (i = 0; i < items.length; i++) {  
+				alert(reg.test(con[i].value));
 				if(reg.test(con[i].value)===false) //输出是否符合zhi要求，true符合，false不符dao合
 				 check=false;                   
 				              
