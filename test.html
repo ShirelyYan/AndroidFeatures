@@ -210,12 +210,12 @@
 		checkInput();
 		var score = $('input[name="feature"]');//feature列表
 		var con = document.getElementsByName('score');//score列表
-		
+		var sid,fid;
 		var tArray = new Array();  //2*con.length数组，先声明一维
 		for(var k=0;k<con.length;k++){    //第k列：{featurename，score}
 			tArray[k]=new Array(2);  //声明第k列一维数组，每一个一维数组里面的一个元素都是一个数组；
-			var sid="score"+k.toString();
-			var fid="feature"+k.toString();
+			sid="score"+k;
+			fid="feature"+k;
 			if（!document.getElementById(fid).value）
 				alert(fid);
 			tArray[k][0]=document.getElementById(fid).value;
