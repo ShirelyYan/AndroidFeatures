@@ -62,8 +62,7 @@
 				</li>
 				<span>According to the Malware Family description, is this permission or API malicious？ </span>
 				<br />
-				<span>Mark below to rate: </span><br />
-				<span>0:Not at all likely; &emsp; 10: Extremely likely </span>
+				<span>Mark below to rate &emsp;(0:Not at all likely; &emsp; 10: Extremely likely)</span>
 				
           <p>Score: FeatureList</p> 
 	  <p><input name="score" id="score1" size=4 onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
@@ -205,54 +204,55 @@
 			 check=false;
 		} 
 		if(check===false){
-			alert( "Please input number from 0 to 10" ); 
+			alert( "Please input number from 0 to 10" ); 	
 		}
+		return check;
         }
 	
 	//savechecked
 	function createOrder() 
 	{       
-		checkInput();
-		var score = $('input[name="feature"]');//feature列表
-		var con = document.getElementsByName('score');//score列表
-		var sid,fid,num;
-		var tArray = new Array();  //2*con.length数组，先声明一维
-		for(var k=0;k<con.length;k++){    //第k列：{featurename，score}
-			tArray[k]=new Array(2);  //声明第k列一维数组，每一个一维数组里面的一个元素都是一个数组；
-			num=k+1;
-			sid="score"+num;
-			fid="feature"+num;
-			tArray[k][0]=document.getElementById(fid.toString()).value;
-			tArray[k][1]=document.getElementById(sid.toString()).value;
-			
-		}
-		var sample=document.getElementById("sample").value;                
-// 		var content = sample +", "+tArray.toString();
-// 		document.getElementById("order").value=tArray.toString();		
-// 		var filename=sample+'.txt';
-// 		download(content, filename, 'text/plain');
-// 		alert("Submitted!");		
-		
-		//save CSV
-		let str = `Feature,Rate(0-10)\n`;;
-		//增加\t为了不让表格显示科学计数法或者其他格式
-		for(let i = 0 ; i < tArray.length ; i++ ){
-			for(let item in tArray[i]){
-				str+=`${tArray[i][item] + '\t'},`;
+		if (checkInput()){
+			var score = $('input[name="feature"]');//feature列表
+			var con = document.getElementsByName('score');//score列表
+			var sid,fid,num;
+			var tArray = new Array();  //2*con.length数组，先声明一维
+			for(var k=0;k<con.length;k++){    //第k列：{featurename，score}
+				tArray[k]=new Array(2);  //声明第k列一维数组，每一个一维数组里面的一个元素都是一个数组；
+				num=k+1;
+				sid="score"+num;
+				fid="feature"+num;
+				tArray[k][0]=document.getElementById(fid.toString()).value;
+				tArray[k][1]=document.getElementById(sid.toString()).value;
+
 			}
-			str+='\n';
+			var sample=document.getElementById("sample").value;                
+	// 		var content = sample +", "+tArray.toString();
+	// 		document.getElementById("order").value=tArray.toString();		
+	// 		var filename=sample+'.txt';
+	// 		download(content, filename, 'text/plain');
+	// 		alert("Submitted!");		
+
+			//save CSV
+			let str = `Feature,Rate(0-10)\n`;;
+			//增加\t为了不让表格显示科学计数法或者其他格式
+			for(let i = 0 ; i < tArray.length ; i++ ){
+				for(let item in tArray[i]){
+					str+=`${tArray[i][item] + '\t'},`;
+				}
+				str+='\n';
+			}
+			//encodeURIComponent解决中文乱码
+			let uri = 'data:text/csv;charset=utf-8,\ufeff' + encodeURIComponent(str);
+			//通过创建a标签实现
+			var link = document.createElement("a");
+			link.href = uri;
+			//对下载的文件命名
+			link.download = sample+".csv";
+			document.body.appendChild(link);
+			link.click();
+			document.body.removeChild(link);
 		}
-		//encodeURIComponent解决中文乱码
-		let uri = 'data:text/csv;charset=utf-8,\ufeff' + encodeURIComponent(str);
-		//通过创建a标签实现
-		var link = document.createElement("a");
-		link.href = uri;
-		//对下载的文件命名
-		link.download = sample+".csv";
-		document.body.appendChild(link);
-		link.click();
-		document.body.removeChild(link);
-		
 	}
 </script>
 </html>
