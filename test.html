@@ -65,7 +65,7 @@
 		  <input type="text" id="feature1" class="feat" name="feature" value="RequestedPermissionList_android.permission.BATTERY_STATS"/></p>   
           <p><input name="score" id="score2" size=4 onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
 		  <input type="text" id="feature2" class="feat" name="feature" value="RequestedPermissionList_android.permission.CAMERA"/></p>  
-<!--           <p><input name="score" id="score3" size=4 onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+          <p><input name="score" id="score3" size=4 onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
 		  <input type="text" id="feature3" class="feat" name="feature" value="RequestedPermissionList_android.permission.SYSTEM_ALERT_WINDOW"/></p>     
           <p><input name="score" id="score4" size=4 onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
 		  <input type="text" id="feature4" class="feat" name="feature" value="RequestedPermissionList_android.permission.KILL_BACKGROUND_PROCESSES"/></p>     
@@ -119,7 +119,7 @@
 		  <input type="text" id="feature28" class="feat" name="feature" value="SuspiciousApiList_Ljava/io/IOException;->printStackTrace"/></p> 
           <p><input name="score" id="score29" size=4 onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
 		  <input type="text" id="feature29" class="feat" name="feature" value="SuspiciousApiList_Landroid/net/wifi/WifiManager.setWifiEnabled"/></p> 
-				 -->
+				
 				<textarea id="order" rows='10' cols='100'></textarea>
 				</div>
 			</ul>
@@ -217,41 +217,37 @@
 			num=k+1;
 			sid="score"+num;
 			fid="feature"+num;
-// 			if (!document.getElementById(fid).value)
-// 			alert(tArray.length);
-				alert(fid.toString());
 			tArray[k][0]=document.getElementById(fid.toString()).value;
 			tArray[k][1]=document.getElementById(sid.toString()).value;
 			
 		}
 		var sample=document.getElementById("sample").value;                
-	
-		var content = sample +", "+tArray.toString();
-		document.getElementById("order").value=tArray.toString();
+// 		var content = sample +", "+tArray.toString();
+// 		document.getElementById("order").value=tArray.toString();		
+// 		var filename=sample+'.txt';
+// 		download(content, filename, 'text/plain');
+// 		alert("Submitted!");		
 		
-		var filename=sample+'.txt';
-		download(content, filename, 'text/plain');
-		alert("Submitted!");
-
-// 		let str;
-// 		//增加\t为了不让表格显示科学计数法或者其他格式
-// 		for(let i = 0 ; i < tArray.length ; i++ ){
-// 			for(let item in jsonData[i]){
-// 				str+=`${jsonData[i][item] + '\t'},`;
-// 			}
-// 			str+='\n';
-// 		}
-// 		//encodeURIComponent解决中文乱码
-// 		let uri = 'data:text/csv;charset=utf-8,\ufeff' + encodeURIComponent(str);
-// 		//通过创建a标签实现
-// 		var link = document.createElement("a");
-// 		link.href = uri;
-// 		//对下载的文件命名
-// 		link.download = "json数据表.csv";
-// 		document.body.appendChild(link);
-// 		link.click();
-// 		document.body.removeChild(link);
-// 		}
+		//save CSV
+		let str;
+		//增加\t为了不让表格显示科学计数法或者其他格式
+		for(let i = 0 ; i < tArray.length ; i++ ){
+			for(let item in tArray[i]){
+				str+=`${tArray[i][item] + '\t'},`;
+			}
+			str+='\n';
+		}
+		//encodeURIComponent解决中文乱码
+		let uri = 'data:text/csv;charset=utf-8,\ufeff' + encodeURIComponent(str);
+		//通过创建a标签实现
+		var link = document.createElement("a");
+		link.href = uri;
+		//对下载的文件命名
+		link.download = sample+".csv";
+		document.body.appendChild(link);
+		link.click();
+		document.body.removeChild(link);
+		
 	}
 </script>
 </html>
