@@ -216,8 +216,10 @@
 			tArray[k]=new Array(2);  //声明第k列一维数组，每一个一维数组里面的一个元素都是一个数组；
 			var sid="score"+k.toString();
 			var fid="feature"+k.toString();
-			tArray[k][0]=document.getElementById("fid").value;;
-			tArray[k][1]=document.getElementById("sid").value;;
+			if（document.getElementById(fid).value=null）
+			alert(fid);
+			tArray[k][0]=document.getElementById(fid).value;
+			tArray[k][1]=document.getElementById(sid).value;
 			
 		}
 		var sample=document.getElementById("sample").value;                
@@ -228,7 +230,9 @@
 		var filename=sample+'.txt';
 		download(content, filename, 'text/plain');
 		alert("Submitted!");
-		//alert("content");
+		
+// 		var sheet = XLSX.utils.aoa_to_sheet(aoa);
+// 		openDownloadDialog(sheet2blob(sheet), '导出.xlsx');
 	}
 </script>
 </html>
