@@ -2,30 +2,30 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>菜鸟教程(runoob.com)</title>
+<title>index</title>
 </head>
 <body>
 <p>Score <input id="score1" name="score" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
 	<input type="text" id="input1" value="permission"/></p>
-<p><input type="button" onclick=checkInput() value="测试"/></p>
+<p><input type="button" onclick="checkInput()" value="测试"/></p>
 	<span>sds</span>
 	
 </body>
 	
 	<script>
 		function checkInput(){
-			var con = document.getElementsByName('score').value; //获取输入框的内容
+			var con = document.getElementsByName('score'); //获取输入框的内容
 			
-			alert( con[0].value ); 
+			alert(con.length); 
 			var reg = /^\d{0,10}$/; //正规表达式对du象
 			var check=true;
 			for (i = 0; i < items.length; i++) {                    
-				if(!reg.test(con[i])) //输出是否符合zhi要求，true符合，false不符dao合
+				if(!reg.test(con[i].value)) //输出是否符合zhi要求，true符合，false不符dao合
 				 check=false;                   
 				}               
 			} 
 			if(!check){
-				alert( "Please input: 0 - 10" ); 
+				alert( "Please input number from 0 to 10" ); 
 			}
         }
 	</script>
