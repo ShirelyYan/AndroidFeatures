@@ -20,13 +20,14 @@
 		  width: 50%;
 		}
 		.main {
-		  margin-left: 30%;
+		  margin-left: 50%;
 		}
 		iframe {width: 100%;padding: 0;margin: 0;border: none;}
-		   input#sample {font-size:16px; border-style:none;font-weight: bold;}  
-		   .family {font-size:16px; border-style:none;font-weight: bold;}     
-		   li {font-size:16px; font-weight: bold;}
-		   .STYLE1 {color: #AAAAAA; font-family: Arial, Helvetica, sans-serif; font-weight: bold; }
+		input#sample {font-size:16px; border-style:none;font-weight: bold;}  
+		.feat {font-size:16px; border-style:none;}
+		.family {font-size:16px; border-style:none;font-weight: bold;}     
+		li {font-size:16px; font-weight: bold;}
+		.STYLE1 {color: #AAAAAA; font-family: Arial, Helvetica, sans-serif; font-weight: bold; }
 	</style>
 	<div class="head">
 	    <li>
@@ -59,7 +60,7 @@
 					<input type="text" id="sample" class="family" style="min-width: 58%;"  value="0a57c96116222beb1874aa3eca04f1ff"/>
 				</li>
 				<p><input type="button" id="btnOperate" onclick="createOrder()" value="Submit"></p>
-          <p>Score <input id="score1" name="score" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"><input type="text" id="input1" value="RequestedPermissionList_android.permission.BATTERY_STATS"/></p>   
+          <p>Score <input id="score1" name="score" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"><input type="text" class="feat" name="feature" id="input1" value="RequestedPermissionList_android.permission.BATTERY_STATS"/></p>   
           <p><input type="checkbox" name="category" value="permission.CAMERA"/>RequestedPermissionList_android.permission.CAMERA</p>
           <p><input type="checkbox" name="category" value="permission.SYSTEM_ALERT_WINDOW"/>RequestedPermissionList_android.permission.SYSTEM_ALERT_WINDOW</p>    
           <p><input type="checkbox" name="category" value="permission.KILL_BACKGROUND_PROCESSES"/>RequestedPermissionList_android.permission.KILL_BACKGROUND_PROCESSES</p>    
