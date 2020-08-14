@@ -26,10 +26,10 @@
             <iframe src="survey/0c18bc70ca74dff3e92100722e503c05.html" id="frame1" frameborder=0></iframe>
         </div> 
 	<div id="survey2" name="survey" style="display:block">
-            <iframe src="survey/0f1553bddd194d6597a215c69326828b.html" id="frame2" frameborder=0></iframe>
+            <iframe src="survey/0f1553bddd194d6597a215c69326828b.html" id="frame2" frameborder=0  scrolling="no" ></iframe>
         </div> 
-	<div id="survey3" name="survey" style="display:block">
-            <iframe src="survey/0c18bc70ca74dff3e92100722e503c05.html" id="frame3" frameborder=0></iframe>
+	<div id="survey3" name="survey" style="display:none">
+            <iframe src="survey/0c18bc70ca74dff3e92100722e503c05.html" id="frame3" frameborder=0  scrolling="no" ></iframe>
         </div> 
 	<div id="survey4" name="survey" style="display:none">
             <iframe src="survey/0f1553bddd194d6597a215c69326828b.html" id="frame4" frameborder=0></iframe>
@@ -59,12 +59,12 @@
 </body>
 	
 	<script>
-		 function setIframe(iframe) {
-			if (iframe) {
-				var iframeWin = iframe.contentWindow;
+		 function setIframe(iframeObj) {
+			if (iframeObj) {
+				var iframeWin = iframeObj.contentWindow;
 				//var iframeWin = iframe.contentWindow || iframe.contentDocument.parentWindow;
 				if (iframeWin.document.body) {
-					iframe.height = iframeWin.document.documentElement.scrollHeight || iframeWin.document.body.scrollHeight;
+					iframeObj.height = iframeWin.document.documentElement.scrollHeight || iframeWin.document.body.scrollHeight;
 				}
 			}
 		}
@@ -98,7 +98,7 @@
 			var iframeid,divone;
 			for(i = 0; i<divlist.length;i++){
 				iframeid="frame"+(i+1);
-				setIframe(document.getElementById(iframeid));
+				//setIframe(document.getElementById(iframeid));
 				if(i!=0){
 					divone=document.getElementById(divlist[i].id);
 					divone.style.display="none";
