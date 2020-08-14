@@ -59,7 +59,7 @@
 </body>
 	
 	<script>
-		 function setIframeHeight(iframe) {
+		 function setIframe(iframe) {
 			if (iframe) {
 				var iframeWin = iframe.contentWindow || iframe.contentDocument.parentWindow;
 				if (iframeWin.document.body) {
@@ -79,7 +79,7 @@
 				if(divlist[i].id==item){
 					
 					if(current.style.display="none"){
-					//setIframeHeight(document.getElementById(iframeid));
+					//setIframe(document.getElementById(iframeid));
 					current.style.display="block"; 
 					}
 					else alert(divlist.length+item);
@@ -94,7 +94,7 @@
 			var iframeid;
 			for(i = 0; i<divlist.length;i++){
 				iframeid="frame"+(i+1);
-				setIframeHeight(document.getElementById(iframeid));
+				setIframe(document.getElementById(iframeid));
 			}
 			
 		}
