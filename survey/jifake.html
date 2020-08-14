@@ -97,11 +97,10 @@
 			var iframeid,divone,ifr;
 			for(i = 0; i<divlist.length;i++){
 				iframeid="frame"+(i+1);
-				ifr=document.getElementById(iframeid);
-				if(i!=0){
-					divone=document.getElementById(divlist[i].id);
-					divone.style.display="none";
-				}
+// 				if(i!=0){
+// 					divone=document.getElementById(divlist[i].id);
+// 					divone.style.display="none";
+// 				}
 				setIframe(document.getElementById(iframeid));
 			}
 			
