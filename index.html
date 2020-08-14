@@ -25,10 +25,10 @@
 	<div id="survey1" name="survey" style="display:block">
             <iframe src="survey/0c18bc70ca74dff3e92100722e503c05.html" id="frame1" frameborder=0></iframe>
         </div> 
-	<div id="survey2" name="survey" style="display:none">
+	<div id="survey2" name="survey" style="display:block">
             <iframe src="survey/0f1553bddd194d6597a215c69326828b.html" id="frame2" frameborder=0></iframe>
         </div> 
-	<div id="survey3" name="survey" style="display:none">
+	<div id="survey3" name="survey" style="display:block">
             <iframe src="survey/0c18bc70ca74dff3e92100722e503c05.html" id="frame3" frameborder=0></iframe>
         </div> 
 	<div id="survey4" name="survey" style="display:none">
@@ -95,10 +95,14 @@
 
 		window.onload = function () {
 			var divlist=document.getElementsByName("survey");
-			var iframeid;
+			var iframeid,divone;
 			for(i = 0; i<divlist.length;i++){
 				iframeid="frame"+(i+1);
 				setIframe(document.getElementById(iframeid));
+				if(i!=0){
+					divone=document.getElementById(divlist[i].id);
+					divone.style.display="none";
+				}
 			}
 			
 		}
