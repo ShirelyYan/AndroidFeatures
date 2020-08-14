@@ -5,29 +5,31 @@
 <title>index</title>
 </head>
 <body>
-<p>Score <input id="score1" name="score" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
-	<input type="text" id="input1" value="permission"/></p>
-<p><input type="button" onclick="checkInput()" value="测试"/></p>
-	<span>sds</span>
+	<div id="test1" style="display:none">aaaaaa</div>
+	<div  id="test2" style="visibility: hidden">bbbbb</div>
+
+	<button οnclick="showDiv1()">显示1</button>
+	<button οnclick="showDiv2()">显示2</button>
+	<button οnclick="hiddenDiv1()">隐藏1</button>
+	<button οnclick="hiddenDiv2()">隐藏2</button>
 	
 </body>
 	
 	<script>
-		function checkInput(){
-			var con = document.getElementsByName('score'); //获取输入框的内容
-
-// 			var reg = /^\d{0,10}$/; //正规表达式对du象
-			var reg = /^([0-9]|(1[0]))$/;
-			var check=true;
-			for (i = 0; i < con.length; i++) {  
-				alert(reg.test(con[i].value));
-				if(!!con[i].value && reg.test(con[i].value)===false) //输出是否符合zhi要求，true符合，false不符dao合
-				 check=false;                   
-				              
-			} 
-			if(check===false){
-				alert( "Please input number from 0 to 10" ); 
-			}
-        }
+		 function showDiv1(){
+			//$("#test1").attr("style","display:block");
+			//$("#test1").show();  
+			$("#test1").css("display","block");
+		}
+		function showDiv2(){
+			//$("#test2").attr("style","visibility:visible");
+			$("#test2").css("visibility","visible");
+		}
+		function hiddenDiv1(){
+			$("#test1").hide();
+		}
+		function hiddenDiv2(){
+			$("#test2").attr("style","visibility:hidden");
+		}
 	</script>
 </html>
