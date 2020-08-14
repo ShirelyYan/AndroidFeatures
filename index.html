@@ -5,59 +5,60 @@
 <title>index</title>
 	<style type="text/css">
 		iframe {width: 100%;padding: 0;margin: 0;border: none;}
+		.surveystyle{text-decoration: none;color: #5fbeaa !important;}
 	</style>
 </head>
 <body>
-	<div>
-		<button id=“1” οnclick="showDiv1()">显示1</button>
-		<button id=“2” οnclick="showDiv2()">显示2</button>
-		<button id=“3” οnclick="showDiv1()">显示1</button>
-		<button id=“4” οnclick="showDiv2()">显示2</button>
-		<button id=“5” οnclick="showDiv1()">显示1</button>
-		<button id=“6” οnclick="showDiv2()">显示2</button>
-		<button id=“7” οnclick="showDiv1()">显示1</button>
-		<button id=“8” οnclick="showDiv2()">显示2</button>
-		<button id=“9” οnclick="showDiv1()">显示1</button>
-		<button id=“10” οnclick="showDiv2()">显示2</button>
-		<button id=“11” οnclick="showDiv2()">显示2</button>
+	<div class="surveystyle">
+		<a href="#" onclick="showDiv('survey1');">survey1</a>
+		<a href="#" onclick="showDiv('survey2');">survey2</a>
+		<a href="#" onclick="showDiv('survey3');">survey3</a>
+		<a href="#" onclick="showDiv('survey4');">survey4</a>
+		<a href="#" onclick="showDiv('survey5');">survey5</a>
+		<a href="#" onclick="showDiv('survey6');">survey6</a>
+		<a href="#" onclick="showDiv('survey7');">survey7</a>
+		<a href="#" onclick="showDiv('survey8');">survey8</a>
+		<a href="#" onclick="showDiv('survey9');">survey9</a>
+		<a href="#" onclick="showDiv('survey10');">survey10</a>
+		<a href="#" onclick="showDiv('survey11');">survey11</a>
 	</div>
-	<div id="survey1" style="display:block">
+	<div id="survey1" name="survey" style="display:block">
             <iframe src="survey/0c18bc70ca74dff3e92100722e503c05.html" id="iframe1" frameborder=0></iframe>
         </div> 
-	<div id="survey2" style="display:none">
+	<div id="survey2" name="survey" style="display:none">
             <iframe src="survey/0c18bc70ca74dff3e92100722e503c05.html" id="iframe2" frameborder=0></iframe>
         </div> 
-	<div id="survey3" style="display:none">
+	<div id="survey3" name="survey" style="display:none">
             <iframe src="survey/0c18bc70ca74dff3e92100722e503c05.html" id="iframe2" frameborder=0></iframe>
         </div> 
-	<div id="survey2" style="display:none">
+	<div id="survey2" name="survey" style="display:none">
             <iframe src="survey/0c18bc70ca74dff3e92100722e503c05.html" id="iframe2" frameborder=0></iframe>
         </div> 
-	<div id="survey4" style="display:none">
+	<div id="survey4" name="survey" style="display:none">
             <iframe src="survey/0c18bc70ca74dff3e92100722e503c05.html" id="iframe2" frameborder=0></iframe>
         </div> 
-	<div id="survey2" style="display:none">
+	<div id="survey2" name="survey" style="display:none">
             <iframe src="survey/0c18bc70ca74dff3e92100722e503c05.html" id="iframe2" frameborder=0></iframe>
         </div> 
-	<div id="survey5" style="display:none">
+	<div id="survey5" name="survey" style="display:none">
             <iframe src="survey/0c18bc70ca74dff3e92100722e503c05.html" id="iframe2" frameborder=0></iframe>
         </div> 
-	<div id="survey6" style="display:none">
+	<div id="survey6" name="survey" style="display:none">
             <iframe src="survey/0c18bc70ca74dff3e92100722e503c05.html" id="iframe2" frameborder=0></iframe>
         </div> 
-	<div id="survey7" style="display:none">
+	<div id="survey7" name="survey" style="display:none">
             <iframe src="survey/0c18bc70ca74dff3e92100722e503c05.html" id="iframe2" frameborder=0></iframe>
         </div> 
-	<div id="survey8" style="display:none">
+	<div id="survey8" name="survey" style="display:none">
             <iframe src="survey/0c18bc70ca74dff3e92100722e503c05.html" id="iframe2" frameborder=0></iframe>
         </div> 
-	<div id="survey9" style="display:none">
+	<div id="survey9" name="survey" style="display:none">
             <iframe src="survey/0c18bc70ca74dff3e92100722e503c05.html" id="iframe2" frameborder=0></iframe>
         </div> 
-	<div id="survey10" style="display:none">
+	<div id="survey10" name="survey" style="display:none">
             <iframe src="survey/0c18bc70ca74dff3e92100722e503c05.html" id="iframe2" frameborder=0></iframe>
         </div> 
-	<div id="survey11" style="display:none">
+	<div id="survey11" name="survey" style="display:none">
             <iframe src="survey/0c18bc70ca74dff3e92100722e503c05.html" id="iframe2" frameborder=0></iframe>
         </div> 
 	
@@ -72,17 +73,22 @@
 				}
 			}
 		}
-		function showDiv1(){
-			//$("#test1").attr("style","display:block");
-			//$("#test1").show();  
-// 			$("#test1").css("display","block");
-			document.getElementById("survey2").style.display="none";//隐藏
-			document.getElementById("survey1").style.display="";//显示
+
+		function showDiv(item){
+			var current=document.getElementById(item);
+			var divlist=document.getElementByname("survey");
+			var allnum=11;
+			var divname,divone;
+			for(i = 0; i<divlist.length;i++){
+				divname=divlist.id;
+				divone=document.getElementById(item);
+				if(divlist.id==item)
+				   current.style.display="block"; 
+				else if(divone.style.display=="block")
+					divone.style.display="none";
+			}
 		}
-		    function showDiv2(){
-			document.getElementById("survey2").style.display="none";//隐藏
-			document.getElementById("survey1").style.display="";//显示
-		    }
+
 		window.onload = function () {
 			setIframeHeight(document.getElementById('iframe1'));
 			setIframeHeight(document.getElementById('iframe2'));
