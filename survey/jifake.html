@@ -82,10 +82,13 @@
 					if(current.style.display="none"){
 					//setIframe(document.getElementById(iframeid));
 					current.style.display="block"; 
+						alert("show iframeid "+iframeid);
 					}
 				}
-				else if(divone.style.display=="block")
+				else if(divone.style.display=="block"){
 					divone.style.display="none";
+					alert("hiden last iframeid "+iframeid);
+				}
 			}
 		}
 
