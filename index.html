@@ -74,12 +74,15 @@
 			var divlist=document.getElementsByName("survey");
 			var n=Number(item.slice(-1));
 			var iframeid="frame"+n;
+			var iframeWin = document.getElementById(iframeid).contentWindow;
 			var divone;
 			for(i = 0; i<divlist.length;i++){
 				divone=document.getElementById(divlist[i].id);				
 				if(divlist[i].id==item){
 					
 					if(current.style.display="none"){
+					alert(iframeWin.document.documentElement.scrollHeight);
+					alert(iframeWin.document.body.scrollHeight);
 					//setIframe(document.getElementById(iframeid));
 					current.style.display="block"; 
 					}
