@@ -3,33 +3,32 @@
 <head>
 <meta charset="utf-8">
 <title>index</title>
+	<style type="text/css">
+		iframe {width: 100%;padding: 0;margin: 0;border: none;}
+	</style>
 </head>
 <body>
-	<div id="test1" style="display:none">aaaaaa</div>
-	<div  id="test2" style="visibility: hidden">bbbbb</div>
-
-	<button οnclick="showDiv1()">显示1</button>
-	<button οnclick="showDiv2()">显示2</button>
-	<button οnclick="hiddenDiv1()">隐藏1</button>
-	<button οnclick="hiddenDiv2()">隐藏2</button>
-	
+	<div id="survey1" style="display:block">
+            <iframe src="survey/0c18bc70ca74dff3e92100722e503c05.html.html" id="iframe1" frameborder=0></iframe>
+        </div> 
+	<div id="survey2" style="display:block">
+            <iframe src="survey/0c18bc70ca74dff3e92100722e503c05.html.html" id="iframe2" frameborder=0></iframe>
+        </div> 
 </body>
 	
 	<script>
-		 function showDiv1(){
-			//$("#test1").attr("style","display:block");
-			//$("#test1").show();  
-			$("#test1").css("display","block");
+		 function setIframeHeight(iframe) {
+			if (iframe) {
+				var iframeWin = iframe.contentWindow || iframe.contentDocument.parentWindow;
+				if (iframeWin.document.body) {
+					iframe.height = iframeWin.document.documentElement.scrollHeight || iframeWin.document.body.scrollHeight;
+				}
+			}
 		}
-		function showDiv2(){
-			//$("#test2").attr("style","visibility:visible");
-			$("#test2").css("visibility","visible");
-		}
-		function hiddenDiv1(){
-			$("#test1").hide();
-		}
-		function hiddenDiv2(){
-			$("#test2").attr("style","visibility:hidden");
+		
+		window.onload = function () {
+			setIframeHeight(document.getElementById('iframe1'));
+			setIframeHeight(document.getElementById('iframe2'));
 		}
 	</script>
 </html>
