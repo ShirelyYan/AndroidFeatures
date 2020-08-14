@@ -29,37 +29,31 @@
             <iframe src="survey/0c18bc70ca74dff3e92100722e503c05.html" id="iframe2" frameborder=0></iframe>
         </div> 
 	<div id="survey3" name="survey" style="display:none">
-            <iframe src="survey/0c18bc70ca74dff3e92100722e503c05.html" id="iframe2" frameborder=0></iframe>
-        </div> 
-	<div id="survey2" name="survey" style="display:none">
-            <iframe src="survey/0c18bc70ca74dff3e92100722e503c05.html" id="iframe2" frameborder=0></iframe>
+            <iframe src="survey/0c18bc70ca74dff3e92100722e503c05.html" id="iframe3" frameborder=0></iframe>
         </div> 
 	<div id="survey4" name="survey" style="display:none">
-            <iframe src="survey/0c18bc70ca74dff3e92100722e503c05.html" id="iframe2" frameborder=0></iframe>
-        </div> 
-	<div id="survey2" name="survey" style="display:none">
-            <iframe src="survey/0c18bc70ca74dff3e92100722e503c05.html" id="iframe2" frameborder=0></iframe>
+            <iframe src="survey/0c18bc70ca74dff3e92100722e503c05.html" id="iframe4" frameborder=0></iframe>
         </div> 
 	<div id="survey5" name="survey" style="display:none">
-            <iframe src="survey/0c18bc70ca74dff3e92100722e503c05.html" id="iframe2" frameborder=0></iframe>
+            <iframe src="survey/0c18bc70ca74dff3e92100722e503c05.html" id="iframe5" frameborder=0></iframe>
         </div> 
 	<div id="survey6" name="survey" style="display:none">
-            <iframe src="survey/0c18bc70ca74dff3e92100722e503c05.html" id="iframe2" frameborder=0></iframe>
+            <iframe src="survey/0c18bc70ca74dff3e92100722e503c05.html" id="iframe6" frameborder=0></iframe>
         </div> 
 	<div id="survey7" name="survey" style="display:none">
-            <iframe src="survey/0c18bc70ca74dff3e92100722e503c05.html" id="iframe2" frameborder=0></iframe>
+            <iframe src="survey/0c18bc70ca74dff3e92100722e503c05.html" id="iframe7" frameborder=0></iframe>
         </div> 
 	<div id="survey8" name="survey" style="display:none">
-            <iframe src="survey/0c18bc70ca74dff3e92100722e503c05.html" id="iframe2" frameborder=0></iframe>
+            <iframe src="survey/0c18bc70ca74dff3e92100722e503c05.html" id="iframe8" frameborder=0></iframe>
         </div> 
 	<div id="survey9" name="survey" style="display:none">
-            <iframe src="survey/0c18bc70ca74dff3e92100722e503c05.html" id="iframe2" frameborder=0></iframe>
+            <iframe src="survey/0c18bc70ca74dff3e92100722e503c05.html" id="iframe9" frameborder=0></iframe>
         </div> 
 	<div id="survey10" name="survey" style="display:none">
-            <iframe src="survey/0c18bc70ca74dff3e92100722e503c05.html" id="iframe2" frameborder=0></iframe>
+            <iframe src="survey/0c18bc70ca74dff3e92100722e503c05.html" id="iframe10" frameborder=0></iframe>
         </div> 
 	<div id="survey11" name="survey" style="display:none">
-            <iframe src="survey/0c18bc70ca74dff3e92100722e503c05.html" id="iframe2" frameborder=0></iframe>
+            <iframe src="survey/0c18bc70ca74dff3e92100722e503c05.html" id="iframe11" frameborder=0></iframe>
         </div> 
 	
 </body>
@@ -78,12 +72,16 @@
 			var current=document.getElementById(item);
 			var divlist=document.getElementByname("survey");
 			var allnum=11;
-			var divname,divone;
+			var n=Number(item.slice(-1));
+			var iframeid="iframe"+n;
+			var divname,divone,iframeid;
 			for(i = 0; i<divlist.length;i++){
 				divname=divlist.id;
 				divone=document.getElementById(item);
-				if(divlist.id==item)
-				   current.style.display="block"; 
+				if(divlist.id==item){
+					setIframeHeight(document.getElementById(iframeid));
+					current.style.display="block"; 
+				}
 				else if(divone.style.display=="block")
 					divone.style.display="none";
 			}
@@ -91,7 +89,6 @@
 
 		window.onload = function () {
 			setIframeHeight(document.getElementById('iframe1'));
-			setIframeHeight(document.getElementById('iframe2'));
 		}
 		
 	</script>
