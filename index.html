@@ -9,15 +9,58 @@
 </head>
 <body>
 	<div>
-		<button οnclick="showDiv1()">显示1</button>
-		<button οnclick="showDiv2()">显示2</button>
+		<button id=“1” οnclick="showDiv1()">显示1</button>
+		<button id=“2” οnclick="showDiv2()">显示2</button>
+		<button id=“3” οnclick="showDiv1()">显示1</button>
+		<button id=“4” οnclick="showDiv2()">显示2</button>
+		<button id=“5” οnclick="showDiv1()">显示1</button>
+		<button id=“6” οnclick="showDiv2()">显示2</button>
+		<button id=“7” οnclick="showDiv1()">显示1</button>
+		<button id=“8” οnclick="showDiv2()">显示2</button>
+		<button id=“9” οnclick="showDiv1()">显示1</button>
+		<button id=“10” οnclick="showDiv2()">显示2</button>
+		<button id=“11” οnclick="showDiv2()">显示2</button>
 	</div>
 	<div id="survey1" style="display:block">
             <iframe src="survey/0c18bc70ca74dff3e92100722e503c05.html" id="iframe1" frameborder=0></iframe>
         </div> 
-	<div id="survey2" style="display:block">
+	<div id="survey2" style="display:none">
             <iframe src="survey/0c18bc70ca74dff3e92100722e503c05.html" id="iframe2" frameborder=0></iframe>
         </div> 
+	<div id="survey3" style="display:none">
+            <iframe src="survey/0c18bc70ca74dff3e92100722e503c05.html" id="iframe2" frameborder=0></iframe>
+        </div> 
+	<div id="survey2" style="display:none">
+            <iframe src="survey/0c18bc70ca74dff3e92100722e503c05.html" id="iframe2" frameborder=0></iframe>
+        </div> 
+	<div id="survey4" style="display:none">
+            <iframe src="survey/0c18bc70ca74dff3e92100722e503c05.html" id="iframe2" frameborder=0></iframe>
+        </div> 
+	<div id="survey2" style="display:none">
+            <iframe src="survey/0c18bc70ca74dff3e92100722e503c05.html" id="iframe2" frameborder=0></iframe>
+        </div> 
+	<div id="survey5" style="display:none">
+            <iframe src="survey/0c18bc70ca74dff3e92100722e503c05.html" id="iframe2" frameborder=0></iframe>
+        </div> 
+	<div id="survey6" style="display:none">
+            <iframe src="survey/0c18bc70ca74dff3e92100722e503c05.html" id="iframe2" frameborder=0></iframe>
+        </div> 
+	<div id="survey7" style="display:none">
+            <iframe src="survey/0c18bc70ca74dff3e92100722e503c05.html" id="iframe2" frameborder=0></iframe>
+        </div> 
+	<div id="survey8" style="display:none">
+            <iframe src="survey/0c18bc70ca74dff3e92100722e503c05.html" id="iframe2" frameborder=0></iframe>
+        </div> 
+	<div id="survey9" style="display:none">
+            <iframe src="survey/0c18bc70ca74dff3e92100722e503c05.html" id="iframe2" frameborder=0></iframe>
+        </div> 
+	<div id="survey10" style="display:none">
+            <iframe src="survey/0c18bc70ca74dff3e92100722e503c05.html" id="iframe2" frameborder=0></iframe>
+        </div> 
+	<div id="survey11" style="display:none">
+            <iframe src="survey/0c18bc70ca74dff3e92100722e503c05.html" id="iframe2" frameborder=0></iframe>
+        </div> 
+	
 </body>
 	
 	<script>
@@ -32,7 +75,7 @@
 		function showDiv1(){
 			//$("#test1").attr("style","display:block");
 			//$("#test1").show();  
-			$("#test1").css("display","block");
+// 			$("#test1").css("display","block");
 			document.getElementById("survey2").style.display="none";//隐藏
 			document.getElementById("survey1").style.display="";//显示
 		}
@@ -45,7 +88,5 @@
 			setIframeHeight(document.getElementById('iframe2'));
 		}
 		
-		document.getElementById("demo").style.display="none";//隐藏
-document.getElementById("demo").style.display="";//显示
 	</script>
 </html>
