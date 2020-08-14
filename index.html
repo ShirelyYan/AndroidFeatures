@@ -26,13 +26,13 @@
             <iframe src="survey/0c18bc70ca74dff3e92100722e503c05.html" id="frame1" frameborder=0></iframe>
         </div> 
 	<div id="survey2" name="survey" style="display:block">
-            <iframe src="survey/0f1553bddd194d6597a215c69326828b.html" id="frame2" frameborder=0></iframe>
+            <iframe src="survey/0f1553bddd194d6597a215c69326828b.html" id="frame2" frameborder=0 scrolling="no"></iframe>
         </div> 
 	<div id="survey3" name="survey" style="display:block">
-            <iframe src="survey/0c18bc70ca74dff3e92100722e503c05.html" id="frame3" frameborder=0></iframe>
+            <iframe src="survey/0c18bc70ca74dff3e92100722e503c05.html" id="frame3" frameborder=0 scrolling="no"></iframe>
         </div> 
 	<div id="survey4" name="survey" style="display:none">
-            <iframe src="survey/0f1553bddd194d6597a215c69326828b.html" id="frame4" frameborder=0></iframe>
+            <iframe src="survey/0f1553bddd194d6597a215c69326828b.html" id="frame4" frameborder=0 scrolling="no"></iframe>
         </div> 
 	<div id="survey5" name="survey" style="display:none">
             <iframe src="survey/0c18bc70ca74dff3e92100722e503c05.html" id="frame5" frameborder=0></iframe>
@@ -100,11 +100,12 @@
 				iframeid="frame"+(i+1);
 				ifr=document.getElementById(iframeid);
 				if(i!=0){
-					ifr.style.height='0px';
+// 					ifr.style.height='0px';
 					divone=document.getElementById(divlist[i].id);
 					divone.style.display="none";
 				}
-				else setIframe(document.getElementById(iframeid));
+				else 
+					setIframe(document.getElementById(iframeid));
 			}
 			
 		}
