@@ -83,7 +83,7 @@
 					if(current.style.display="none"){
 					alert(iframeWin.document.documentElement.scrollHeight);
 					alert(iframeWin.document.body.scrollHeight);
-					//setIframe(document.getElementById(iframeid));
+					setIframe(document.getElementById(iframeid));
 					current.style.display="block"; 
 					}
 					else alert(divlist.length+item);
@@ -104,7 +104,7 @@
 					divone=document.getElementById(divlist[i].id);
 					divone.style.display="none";
 				}
-				setIframe(document.getElementById(iframeid));
+				else setIframe(document.getElementById(iframeid));
 			}
 			
 		}
