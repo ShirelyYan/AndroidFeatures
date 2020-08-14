@@ -80,7 +80,7 @@
 				if(divlist[i].id==item){
 					
 					if(current.style.display="none"){
-					setIframeHeight(document.getElementById(iframeid));
+					//setIframeHeight(document.getElementById(iframeid));
 					current.style.display="block"; 
 					}
 					else alert(divlist.length+item);
@@ -95,8 +95,9 @@
 			var iframeid;
 			for(i = 0; i<divlist.length;i++){
 				iframeid="iframe"+(i+1);
+				setIframeHeight(document.getElementById(iframeid));
 			}
-			setIframeHeight(document.getElementById("iframe1"));
+			
 		}
 		
 	</script>
