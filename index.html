@@ -71,16 +71,16 @@
 		function showDiv(item){
 			var current=document.getElementById(item);
 			var divlist=document.getElementsByName("survey");
-			var allnum=11;
 			var n=Number(item.slice(-1));
 			var iframeid="iframe"+n;
-			var divname,divone,iframeid;
+			var divone;
 			for(i = 0; i<divlist.length;i++){
-				divname=divlist.id;
-				divone=document.getElementById(item);
-				if(divlist.id==item){
+				divone=document.getElementById(divlist[i].id);				
+				if(divlist[i].id==item){
+					if(current.style.display="none"){
 					setIframeHeight(document.getElementById(iframeid));
 					current.style.display="block"; 
+					}
 				}
 				else if(divone.style.display=="block")
 					divone.style.display="none";
