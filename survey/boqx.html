@@ -70,18 +70,15 @@
 				divone=document.getElementById(divlist[i].id); //js获取div
 				divjquery=$("#"+divlist[i].id);  //jQuery获取div
 				if(divlist[i].id==item){
-					if(currentjquery.style.display="none"){
-						//setIframe(document.getElementById(iframeid));
+// 					if(current.style.display="none"){
+// 						//setIframe(document.getElementById(iframeid));
 // 						current.style.display="block";
-						currentjquery.style.display="block"; 
-						
-// 						alert("this div: "+item+"; show iframeid: "+iframeid);
-					}
+// // 						alert("this div: "+item+"; show iframeid: "+iframeid);
+// 					}
 					currentjquery.show();
 				}
-// 				else if(divjquery.style.display=="block"){
-// 					divjquery.style.display="none";
-// 					divjquery.hide();
+// 				else if(divone.style.display=="block"){
+// 					divone.style.display="none";
 // // 					alert("hiden last divid: "+divlist[i].id);
 // 				}
 				else divjquery.hide();
