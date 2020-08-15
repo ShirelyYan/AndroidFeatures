@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>droidkungfu</title>
+	<style type="text/css">
+		iframe {width: 100%;padding: 0;margin: 0;border: none;}
+		.surveystyle a{text-decoration: none;color: #5fbeaa !important;}
+	</style>
+</head>
+<body>
+	<div class="surveystyle">
+		<a href="#" onclick="showDiv('survey1');">survey1</a>
+		<a href="#" onclick="showDiv('survey2');">survey2</a>
+		<a href="#" onclick="showDiv('survey3');">survey3</a>
+		<a href="#" onclick="showDiv('survey4');">survey4</a>
+		<a href="#" onclick="showDiv('survey5');">survey5</a>
+		<a href="#" onclick="showDiv('survey6');">survey6</a>
+		<a href="#" onclick="showDiv('survey7');">survey7</a>
+
+	</div>
+	<div id="survey1" name="survey" style="display:block">
+            <iframe src="droidkungfu/0ca7586bb5575de481a18de7c837ea30.html" id="frame1" frameborder=0></iframe>
+        </div> 
+	<div id="survey2" name="survey" style="display:none">
+            <iframe src="droidkungfu/dfbe8f855d53d21266faae0cda679ea0.html" id="frame2" frameborder=0></iframe>
+        </div> 
+	<div id="survey3" name="survey" style="display:none">
+            <iframe src="droidkungfu/e19be5b87b8f87d30ceb94df2bb2d056.html" id="frame3" frameborder=0></iframe>
+        </div> 
+	<div id="survey4" name="survey" style="display:none">
+            <iframe src="droidkungfu/eb42dc2200fe498bd9afb926959d735a.html" id="frame4" frameborder=0></iframe>
+        </div> 
+	<div id="survey5" name="survey" style="display:none">
+            <iframe src="droidkungfu/ee704545a7b132dcc08e0e4e52ce8152.html" id="frame5" frameborder=0></iframe>
+        </div> 
+	<div id="survey6" name="survey" style="display:none">
+            <iframe src="droidkungfu/ef28193705a939ec8cbf35b80c4ae9e0.html" id="frame6" frameborder=0></iframe>
+        </div>
+	<div id="survey7" name="survey" style="display:none">
+            <iframe src="droidkungfu/f69b0dd09a4a50b48d82d537837565f3.html" id="frame7" frameborder=0></iframe>
+        </div>
+</body>
+	
+	<script>
+		 function setIframe(iframeObj) {
+			if (iframeObj) {
+				var iframeWin = iframeObj.contentWindow;
+				//var iframeWin = iframe.contentWindow || iframe.contentDocument.parentWindow;
+				if (iframeWin.document.body) {
+					iframeObj.height = iframeWin.document.documentElement.scrollHeight || iframeWin.document.body.scrollHeight;
+				}
+			}
+		}
+
+		function showDiv(item){
+			var current=document.getElementById(item);
+			var divlist=document.getElementsByName("survey");
+			var n=Number(item.slice(6));
+			var iframeid="frame"+n;
+			//var iframeWin = document.getElementById(iframeid).contentWindow;
+			var divone;
+			for(i = 0; i<divlist.length;i++){
+				divone=document.getElementById(divlist[i].id);				
+				if(divlist[i].id==item){
+					if(current.style.display="none"){
+					//setIframe(document.getElementById(iframeid));
+					current.style.display="block"; 
+// 						alert("this div: "+item+"; show iframeid: "+iframeid);
+					}
+				}
+				else if(divone.style.display=="block"){
+					divone.style.display="none";
+// 					alert("hiden last divid: "+divlist[i].id);
+				}
+			}
+		}
+
+		window.onload = function () {
+			var divlist=document.getElementsByName("survey");
+			var iframeid,divone,ifr;
+			for(i = 0; i<divlist.length;i++){
+				iframeid="frame"+(i+1);
+// 				if(i!=0){
+// 					divone=document.getElementById(divlist[i].id);
+// 					divone.style.display="none";
+// 				}
+				setIframe(document.getElementById(iframeid));
+			}
+			
+		}
+		
+	</script>
+</html>

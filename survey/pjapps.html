@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>pjapps</title>
+	<style type="text/css">
+		iframe {width: 100%;padding: 0;margin: 0;border: none;}
+		.surveystyle a{text-decoration: none;color: #5fbeaa !important;}
+	</style>
+</head>
+<body>
+	<div class="surveystyle">
+		<a href="#" onclick="showDiv('survey1');">survey1</a>
+		<a href="#" onclick="showDiv('survey2');">survey2</a>
+		<a href="#" onclick="showDiv('survey3');">survey3</a>
+		<a href="#" onclick="showDiv('survey4');">survey4</a>
+		<a href="#" onclick="showDiv('survey5');">survey5</a>
+		<a href="#" onclick="showDiv('survey6');">survey6</a>
+		<a href="#" onclick="showDiv('survey7');">survey7</a>
+		<a href="#" onclick="showDiv('survey8');">survey8</a>
+		<a href="#" onclick="showDiv('survey9');">survey9</a>
+
+	</div>
+	<div id="survey1" name="survey" style="display:block">
+            <iframe src="pjapps/3d12b375ee681d06fbcabcdff883db50.html" id="frame1" frameborder=0></iframe>
+        </div> 
+	<div id="survey2" name="survey" style="display:none">
+            <iframe src="pjapps/7d54eb8d44d762c7cb70506235cb5077.html" id="frame2" frameborder=0></iframe>
+        </div> 
+	<div id="survey3" name="survey" style="display:none">
+            <iframe src="pjapps/7d891de5c3d50dc63ea9e7fc3a0ddd23.html" id="frame3" frameborder=0></iframe>
+        </div> 
+	<div id="survey4" name="survey" style="display:none">
+            <iframe src="pjapps/8e4bc93becb3cc46123e7e250c598971.html" id="frame4" frameborder=0></iframe>
+        </div> 
+	<div id="survey5" name="survey" style="display:none">
+            <iframe src="pjapps/cae2169f4706e8be514d9967152590c4.html" id="frame5" frameborder=0></iframe>
+        </div> 
+	<div id="survey6" name="survey" style="display:none">
+            <iframe src="pjapps/d7c346e12ed5b35a2edccc50640a0f3b.html" id="frame6" frameborder=0></iframe>
+        </div> 
+	<div id="survey7" name="survey" style="display:none">
+            <iframe src="pjapps/d062eeff315d97d95dce0b95b7b8379e.html" id="frame7" frameborder=0></iframe>
+		</div>
+	<div id="survey8" name="survey" style="display:none">
+            <iframe src="pjapps/de759e9fdb3ec577d753ff240fc91a13.html" id="frame8" frameborder=0></iframe>
+        </div> 
+	<div id="survey9" name="survey" style="display:none">
+            <iframe src="pjapps/f6bb77a41b0ca1c276a04bc992db7473.html" id="frame9" frameborder=0></iframe>
+        </div> 
+
+</body>
+	
+	<script>
+		 function setIframe(iframeObj) {
+			if (iframeObj) {
+				var iframeWin = iframeObj.contentWindow;
+				//var iframeWin = iframe.contentWindow || iframe.contentDocument.parentWindow;
+				if (iframeWin.document.body) {
+					iframeObj.height = iframeWin.document.documentElement.scrollHeight || iframeWin.document.body.scrollHeight;
+				}
+			}
+		}
+
+		function showDiv(item){
+			var current=document.getElementById(item);
+			var divlist=document.getElementsByName("survey");
+			var n=Number(item.slice(6));
+			var iframeid="frame"+n;
+			//var iframeWin = document.getElementById(iframeid).contentWindow;
+			var divone;
+			for(i = 0; i<divlist.length;i++){
+				divone=document.getElementById(divlist[i].id);				
+				if(divlist[i].id==item){
+					if(current.style.display="none"){
+					//setIframe(document.getElementById(iframeid));
+					current.style.display="block"; 
+// 						alert("this div: "+item+"; show iframeid: "+iframeid);
+					}
+				}
+				else if(divone.style.display=="block"){
+					divone.style.display="none";
+// 					alert("hiden last divid: "+divlist[i].id);
+				}
+			}
+		}
+
+		window.onload = function () {
+			var divlist=document.getElementsByName("survey");
+			var iframeid,divone,ifr;
+			for(i = 0; i<divlist.length;i++){
+				iframeid="frame"+(i+1);
+				setIframe(document.getElementById(iframeid));
+			}
+			
+		}
+		
+	</script>
+</html>

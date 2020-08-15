@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>plankton</title>
+	<style type="text/css">
+		iframe {width: 100%;padding: 0;margin: 0;border: none;}
+		.surveystyle a{text-decoration: none;color: #5fbeaa !important;}
+	</style>
+</head>
+<body>
+	<div class="surveystyle">
+		<a href="#" onclick="showDiv('survey1');">survey1</a>
+		<a href="#" onclick="showDiv('survey2');">survey2</a>
+		<a href="#" onclick="showDiv('survey3');">survey3</a>
+		<a href="#" onclick="showDiv('survey4');">survey4</a>
+		<a href="#" onclick="showDiv('survey5');">survey5</a>
+		<a href="#" onclick="showDiv('survey6');">survey6</a>
+		<a href="#" onclick="showDiv('survey7');">survey7</a>
+		<a href="#" onclick="showDiv('survey8');">survey8</a>
+		<a href="#" onclick="showDiv('survey9');">survey9</a>
+		<a href="#" onclick="showDiv('survey10');">survey10</a>
+		<a href="#" onclick="showDiv('survey11');">survey11</a>
+		<a href="#" onclick="showDiv('survey12');">survey12</a>
+		<a href="#" onclick="showDiv('survey13');">survey13</a>
+		<a href="#" onclick="showDiv('survey14');">survey14</a>
+		<a href="#" onclick="showDiv('survey15');">survey15</a>
+		<a href="#" onclick="showDiv('survey16');">survey16</a>
+	</div>
+	<div id="survey1" name="survey" style="display:block">
+            <iframe src="plankton/0d139953efd7c2e34b86a0b60e9b4a00.html" id="frame1" frameborder=0></iframe>
+        </div> 
+	<div id="survey2" name="survey" style="display:none">
+            <iframe src="plankton/00dae4891ec42800cb0bf079271c3d71.html" id="frame2" frameborder=0></iframe>
+        </div> 
+	<div id="survey3" name="survey" style="display:none">
+            <iframe src="plankton/0f9e249617b176ec1b48c85a903e08d8.html" id="frame3" frameborder=0></iframe>
+        </div> 
+	<div id="survey4" name="survey" style="display:none">
+            <iframe src="plankton/0fc4aee2675dffef256cbb7f88d50f07.html" id="frame4" frameborder=0></iframe>
+        </div> 
+	<div id="survey5" name="survey" style="display:none">
+            <iframe src="plankton/1a4581a9f6d5ebb94474750285e03e17.html" id="frame5" frameborder=0></iframe>
+        </div> 
+	<div id="survey6" name="survey" style="display:none">
+            <iframe src="plankton/55285c643637872e21f4e25c43625bbf.html" id="frame6" frameborder=0></iframe>
+        </div> 
+	<div id="survey7" name="survey" style="display:none">
+            <iframe src="plankton/61710df4bc3ace397a2399caa7721e84.html" id="frame7" frameborder=0></iframe>
+		</div>
+	<div id="survey8" name="survey" style="display:none">
+            <iframe src="plankton/63353df7baa82fc883d6cba99597bd1a.html" id="frame8" frameborder=0></iframe>
+        </div> 
+	<div id="survey9" name="survey" style="display:none">
+            <iframe src="plankton/36522225a851ed84fdf1ebd4baad0356.html" id="frame9" frameborder=0></iframe>
+        </div> 
+	<div id="survey10" name="survey" style="display:none">
+            <iframe src="plankton/84288047e2074922e3404a6b95163115.html" id="frame10" frameborder=0></iframe>
+        </div> 
+	<div id="survey11" name="survey" style="display:none">
+            <iframe src="plankton/a0fa15cb411d9c482e81d9cc7cfa2516.html" id="frame11" frameborder=0></iframe>
+        </div> 
+	<div id="survey12" name="survey" style="display:none">
+            <iframe src="plankton/a3a7ab230b072c44e010f258cc410ae7.html" id="frame12" frameborder=0></iframe>
+        </div> 
+	<div id="survey13" name="survey" style="display:none">
+            <iframe src="plankton/fd1c677a3a6abe02dba87adcd1fce87d.html" id="frame13" frameborder=0></iframe>
+        </div> 
+	<div id="survey14" name="survey" style="display:none">
+            <iframe src="plankton/fda8b0ee2c270593d8a0d1b9e6c2a027.html" id="frame14" frameborder=0></iframe>
+		</div>
+		<div id="survey15" name="survey" style="display:none">
+            <iframe src="plankton/fe4adeaa9b548e8d1788d9bcd429c87e.html" id="frame15" frameborder=0></iframe>
+        </div> 
+	<div id="survey16" name="survey" style="display:none">
+            <iframe src="plankton/ffa782b3f60d8c7e2f878d2c25b454bb.html" id="frame16" frameborder=0></iframe>
+        </div>
+</body>
+	
+	<script>
+		 function setIframe(iframeObj) {
+			if (iframeObj) {
+				var iframeWin = iframeObj.contentWindow;
+				//var iframeWin = iframe.contentWindow || iframe.contentDocument.parentWindow;
+				if (iframeWin.document.body) {
+					iframeObj.height = iframeWin.document.documentElement.scrollHeight || iframeWin.document.body.scrollHeight;
+				}
+			}
+		}
+
+		function showDiv(item){
+			var current=document.getElementById(item);
+			var divlist=document.getElementsByName("survey");
+			var n=Number(item.slice(6));
+			var iframeid="frame"+n;
+			//var iframeWin = document.getElementById(iframeid).contentWindow;
+			var divone;
+			for(i = 0; i<divlist.length;i++){
+				divone=document.getElementById(divlist[i].id);				
+				if(divlist[i].id==item){
+					if(current.style.display="none"){
+					//setIframe(document.getElementById(iframeid));
+					current.style.display="block"; 
+// 						alert("this div: "+item+"; show iframeid: "+iframeid);
+					}
+				}
+				else if(divone.style.display=="block"){
+					divone.style.display="none";
+// 					alert("hiden last divid: "+divlist[i].id);
+				}
+			}
+		}
+
+		window.onload = function () {
+			var divlist=document.getElementsByName("survey");
+			var iframeid,divone,ifr;
+			for(i = 0; i<divlist.length;i++){
+				iframeid="frame"+(i+1);
+				setIframe(document.getElementById(iframeid));
+			}
+			
+		}
+		
+	</script>
+</html>

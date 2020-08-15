@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>boqx</title>
+	<style type="text/css">
+		iframe {width: 100%;padding: 0;margin: 0;border: none;}
+		.surveystyle a{text-decoration: none;color: #5fbeaa !important;}
+	</style>
+</head>
+<body>
+	<div class="surveystyle">
+		<a href="#" onclick="showDiv('survey1');">survey1</a>
+		<a href="#" onclick="showDiv('survey2');">survey2</a>
+		<a href="#" onclick="showDiv('survey3');">survey3</a>
+		<a href="#" onclick="showDiv('survey4');">survey4</a>
+		<a href="#" onclick="showDiv('survey5');">survey5</a>
+		<a href="#" onclick="showDiv('survey6');">survey6</a>
+		<a href="#" onclick="showDiv('survey7');">survey7</a>
+		<a href="#" onclick="showDiv('survey8');">survey8</a>
+		<a href="#" onclick="showDiv('survey9');">survey9</a>
+		<a href="#" onclick="showDiv('survey10');">survey10</a>
+		<a href="#" onclick="showDiv('survey11');">survey11</a>
+		<a href="#" onclick="showDiv('survey12');">survey12</a>
+	</div>
+	<div id="survey1" name="survey" style="display:block">
+            <iframe src="boqx/0a79ad231d3cc6f255862e25b7562205.html" id="frame1" frameborder=0></iframe>
+        </div> 
+	<div id="survey2" name="survey" style="display:none">
+            <iframe src="boqx/2a2d965b5673d0c36e19a962e387242e.html" id="frame2" frameborder=0></iframe>
+        </div> 
+	<div id="survey3" name="survey" style="display:none">
+            <iframe src="boqx/2ed9a406c1aa43810ac31ce306ab3997.html" id="frame3" frameborder=0></iframe>
+        </div> 
+	<div id="survey4" name="survey" style="display:none">
+            <iframe src="boqx/4a4bad665725503cbb6e2e0be12fbe01.html" id="frame4" frameborder=0></iframe>
+        </div> 
+	<div id="survey5" name="survey" style="display:none">
+            <iframe src="boqx/4a8e072a0fd84f4723748821f9c322f9.html" id="frame5" frameborder=0></iframe>
+        </div> 
+	<div id="survey6" name="survey" style="display:none">
+            <iframe src="boqx/4cffa0b8c573b5aa23cbaf9ed8440f1e.html" id="frame6" frameborder=0></iframe>
+        </div> 
+	<div id="survey7" name="survey" style="display:none">
+            <iframe src="boqx/4d28b72b157a155bce0dd6fd1d031f15.html" id="frame7" frameborder=0></iframe>
+        </div> 
+	<div id="survey8" name="survey" style="display:none">
+            <iframe src="boqx/4df1cf85ad2ea8e75d1dc04106bffe18.html" id="frame8" frameborder=0></iframe>
+        </div> 
+	<div id="survey9" name="survey" style="display:none">
+            <iframe src="boqx/f5b586410b1990bcaee86886d32a924f.html" id="frame9" frameborder=0></iframe>
+        </div> 
+	<div id="survey10" name="survey" style="display:none">
+            <iframe src="boqx/f33520919f02f3d149a0cd4529428aaf.html" id="frame10" frameborder=0></iframe>
+        </div> 
+	<div id="survey11" name="survey" style="display:none">
+            <iframe src="boqx/f94492365fb7e1c402355b3f38cfabac.html" id="frame11" frameborder=0></iframe>
+        </div> 
+	<div id="survey12" name="survey" style="display:none">
+            <iframe src="boqx/fae588f1d407fd79d2dcd8bc53d1bcd3.html" id="frame11" frameborder=0></iframe>
+        </div>
+</body>
+	
+	<script>
+		 function setIframe(iframeObj) {
+			if (iframeObj) {
+				var iframeWin = iframeObj.contentWindow;
+				//var iframeWin = iframe.contentWindow || iframe.contentDocument.parentWindow;
+				if (iframeWin.document.body) {
+					iframeObj.height = iframeWin.document.documentElement.scrollHeight || iframeWin.document.body.scrollHeight;
+				}
+			}
+		}
+
+		function showDiv(item){
+			var current=document.getElementById(item);
+			var divlist=document.getElementsByName("survey");
+			var n=Number(item.slice(6));
+			var iframeid="frame"+n;
+			//var iframeWin = document.getElementById(iframeid).contentWindow;
+			var divone;
+			for(i = 0; i<divlist.length;i++){
+				divone=document.getElementById(divlist[i].id);				
+				if(divlist[i].id==item){
+					if(current.style.display="none"){
+					//setIframe(document.getElementById(iframeid));
+					current.style.display="block"; 
+// 						alert("this div: "+item+"; show iframeid: "+iframeid);
+					}
+				}
+				else if(divone.style.display=="block"){
+					divone.style.display="none";
+// 					alert("hiden last divid: "+divlist[i].id);
+				}
+			}
+		}
+
+		window.onload = function () {
+			var divlist=document.getElementsByName("survey");
+			var iframeid,divone,ifr;
+			for(i = 0; i<divlist.length;i++){
+				iframeid="frame"+(i+1);
+				setIframe(document.getElementById(iframeid));
+			}
+			
+		}
+		
+	</script>
+</html>
