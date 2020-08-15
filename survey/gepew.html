@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>gepew</title>
+	<style type="text/css">
+		iframe {width: 100%;padding: 0;margin: 0;border: none;}
+		.surveystyle a{text-decoration: none;color: #5fbeaa !important;}
+	</style>
+</head>
+<body>
+	<div class="surveystyle">
+		<a href="#" onclick="showDiv('survey1');">survey1</a>
+		<a href="#" onclick="showDiv('survey2');">survey2</a>
+		<a href="#" onclick="showDiv('survey3');">survey3</a>
+		<a href="#" onclick="showDiv('survey4');">survey4</a>
+		<a href="#" onclick="showDiv('survey5');">survey5</a>
+		<a href="#" onclick="showDiv('survey6');">survey6</a>
+		<a href="#" onclick="showDiv('survey7');">survey7</a>
+		<a href="#" onclick="showDiv('survey8');">survey8</a>
+		<a href="#" onclick="showDiv('survey9');">survey9</a>
+		<a href="#" onclick="showDiv('survey10');">survey10</a>
+		<a href="#" onclick="showDiv('survey11');">survey11</a>
+		<a href="#" onclick="showDiv('survey12');">survey12</a>
+		<a href="#" onclick="showDiv('survey13');">survey13</a>
+		<a href="#" onclick="showDiv('survey14');">survey14</a>
+		<a href="#" onclick="showDiv('survey15');">survey15</a>
+		<a href="#" onclick="showDiv('survey16');">survey16</a>
+		<a href="#" onclick="showDiv('survey16');">survey16</a>
+	</div>
+	<div id="survey1" name="survey" style="display:block">
+            <iframe src="gepew/0a5c52f85ce331b870702082f46beb54.html" id="frame1" frameborder=0></iframe>
+        </div> 
+	<div id="survey2" name="survey" style="display:none">
+            <iframe src="gepew/00b09835092be02ad0fdcca84d6976ef.html" id="frame2" frameborder=0></iframe>
+        </div> 
+	<div id="survey3" name="survey" style="display:none">
+            <iframe src="gepew/0bfbccb7aee0588654922f5741ad39ac.html" id="frame3" frameborder=0></iframe>
+        </div> 
+	<div id="survey4" name="survey" style="display:none">
+            <iframe src="gepew/0d28fa54f9c0d41801e8fb5a7b0433dd.html" id="frame4" frameborder=0></iframe>
+        </div> 
+	<div id="survey5" name="survey" style="display:none">
+            <iframe src="gepew/e422f296106f22c83bd78664848ace58.html" id="frame5" frameborder=0></iframe>
+        </div> 
+	<div id="survey6" name="survey" style="display:none">
+            <iframe src="gepew/e780a5824880e4d6e540466a1415c69e.html" id="frame6" frameborder=0></iframe>
+        </div> 
+	<div id="survey7" name="survey" style="display:none">
+            <iframe src="gepew/ebd75e8c95ba28faad4741717984a4f6.html" id="frame7" frameborder=0></iframe>
+		</div>
+	<div id="survey8" name="survey" style="display:none">
+            <iframe src="gepew/edc7d8a5bcdb2181294472c13e60c6c1.html" id="frame8" frameborder=0></iframe>
+        </div> 
+	<div id="survey9" name="survey" style="display:none">
+            <iframe src="gepew/f367a1aeec40eff47f66ba35405bc171.html" id="frame9" frameborder=0></iframe>
+        </div> 
+	<div id="survey10" name="survey" style="display:none">
+            <iframe src="gepew/f396d2ed1f916a33c3dc6dbe67e17d10.html" id="frame10" frameborder=0></iframe>
+        </div> 
+	<div id="survey11" name="survey" style="display:none">
+            <iframe src="gepew/f805e5bcac39f306a19d913e2edd11d7.html" id="frame11" frameborder=0></iframe>
+        </div> 
+	<div id="survey12" name="survey" style="display:none">
+            <iframe src="gepew/f921435c12d7ad2780e32afcceec6ef9.html" id="frame12" frameborder=0></iframe>
+        </div> 
+	<div id="survey13" name="survey" style="display:none">
+            <iframe src="gepew/f1856374cc096b3faaadd158350fa612.html" id="frame13" frameborder=0></iframe>
+        </div> 
+	<div id="survey14" name="survey" style="display:none">
+            <iframe src="gepew/fb470c9a1ffcf240042708bd0685d694.html" id="frame14" frameborder=0></iframe>
+        </div>
+	<div id="survey15" name="survey" style="display:none">
+            <iframe src="gepew/fc1b0c664c448932bd3b60e80f436411.html" id="frame15" frameborder=0></iframe>
+		</div>
+	<div id="survey16" name="survey" style="display:none">
+            <iframe src="gepew/fc6161e57a2a6f81fa9748f87f2b9081.html" id="frame16" frameborder=0></iframe>
+		</div>
+	<div id="survey17" name="survey" style="display:none">
+            <iframe src="gepew/fec1372c434fa1d495ce9f081e29ce06.html" id="frame17" frameborder=0></iframe>
+        </div>
+</body>
+	
+	<script>
+		 function setIframe(iframeObj) {
+			if (iframeObj) {
+				var iframeWin = iframeObj.contentWindow;
+				//var iframeWin = iframe.contentWindow || iframe.contentDocument.parentWindow;
+				if (iframeWin.document.body) {
+					iframeObj.height = iframeWin.document.documentElement.scrollHeight || iframeWin.document.body.scrollHeight;
+				}
+			}
+		}
+
+		function showDiv(item){
+			var current=document.getElementById(item);
+			var divlist=document.getElementsByName("survey");
+			var n=Number(item.slice(6));
+			var iframeid="frame"+n;
+			//var iframeWin = document.getElementById(iframeid).contentWindow;
+			var divone;
+			for(i = 0; i<divlist.length;i++){
+				divone=document.getElementById(divlist[i].id);				
+				if(divlist[i].id==item){
+					if(current.style.display="none"){
+					//setIframe(document.getElementById(iframeid));
+					current.style.display="block"; 
+// 						alert("this div: "+item+"; show iframeid: "+iframeid);
+					}
+				}
+				else if(divone.style.display=="block"){
+					divone.style.display="none";
+// 					alert("hiden last divid: "+divlist[i].id);
+				}
+			}
+		}
+
+		window.onload = function () {
+			var divlist=document.getElementsByName("survey");
+			var iframeid,divone,ifr;
+			for(i = 0; i<divlist.length;i++){
+				iframeid="frame"+(i+1);
+				setIframe(document.getElementById(iframeid));
+			}
+			
+		}
+		
+	</script>
+</html>
