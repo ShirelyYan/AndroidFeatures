@@ -74,15 +74,17 @@
 						//setIframe(document.getElementById(iframeid));
 // 						current.style.display="block";
 						currentjquery.style.display="block"; 
-						currentjquery.show();
-						alert("this div: "+item+"; show iframeid: "+iframeid);
+						
+// 						alert("this div: "+item+"; show iframeid: "+iframeid);
 					}
+					currentjquery.show();
 				}
-				else if(divjquery.style.display=="block"){
-					divjquery.style.display="none";
-					divjquery.hide();
-					alert("hiden last divid: "+divlist[i].id);
-				}
+// 				else if(divjquery.style.display=="block"){
+// 					divjquery.style.display="none";
+// 					divjquery.hide();
+// // 					alert("hiden last divid: "+divlist[i].id);
+// 				}
+				else divjquery.hide();
 			}
 		}
 
