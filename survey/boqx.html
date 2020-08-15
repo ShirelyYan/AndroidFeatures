@@ -11,7 +11,7 @@
 </head>
 <body>
 	<div class="surveystyle">
-		<a href="#" onclick="showDiv('survey1');">survey1</a>
+		<a href="#"  onclick="showDiv('survey1');">survey1</a>
 		<a href="#" onclick="showDiv('survey2');">survey2</a>
 		<a href="#" onclick="showDiv('survey3');">survey3</a>
 		<a href="#" onclick="showDiv('survey4');">survey4</a>
@@ -76,12 +76,16 @@
 // // 						alert("this div: "+item+"; show iframeid: "+iframeid);
 // 					}
 					currentjquery.show();
+					currentjquery.css("display","block");
 				}
 // 				else if(divone.style.display=="block"){
 // 					divone.style.display="none";
 // // 					alert("hiden last divid: "+divlist[i].id);
 // 				}
-				else divjquery.hide();
+				else{
+					divjquery.hide();
+					divjquery.css("display","none");
+				}
 			}
 		}
 
